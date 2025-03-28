@@ -1,1 +1,35 @@
-<p>login works!</p>
+<main class="login-container">
+    <div class="left">
+        <div class="center">
+            <h2>Bem vindo de volta!</h2>
+            <p>Por favor, insira as informações abaixo</p>
+
+            <app-register-input-layout tema="tema-claro" label="e-mail"
+                email="Digite seu e-mail"></app-register-input-layout>
+            <app-password-input-layout tema="tema-claro" label="senha"
+                password="Digite sua senha"></app-password-input-layout>
+
+            <div class="btns">
+                <app-orange-square-button routerLink="/" tema="tema-claro" orangeSquareButton="entrar"></app-orange-square-button>
+                <app-orange-square-button routerLink="/" tema="tema-claro" orangeSquareButton="Voltar"></app-orange-square-button>
+            </div>
+
+            <div class="btns">
+                <div class="check-box">
+                    <input type="checkbox" name="remember-me" id="remember-me">
+                    <label for="remember-me">Lembre de mim</label>
+                </div>
+
+                <span>Esqueceu a senha?</span>
+            </div>
+
+            <p class="cadastrar">Não possui uma conta? <span routerLink="/cadastrar">Cadastrar</span></p>
+        </div>
+
+    </div>
+
+    <div class="right">
+        <div class="blur">
+        </div>
+    </div>
+</main>

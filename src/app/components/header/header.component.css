@@ -1,4 +1,4 @@
-.nav, .logo, .navegacao {
+.nav, .navegacao {
     display: flex;
     justify-content: space-between;
     align-items: center;

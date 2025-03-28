@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { ListProductsComponent } from "../../components/list-products/list-products.component";
@@ -8,7 +9,7 @@ import { BlackSquareButtonComponent } from "../../components/buttons/black-squar
 
 @Component({
   selector: 'app-home',
-  imports: [HeaderComponent, ListProductsComponent, FooterComponent, ProductBoxComponent, WhiteRoundButtonComponent, BlackSquareButtonComponent],
+  imports: [RouterModule, HeaderComponent, ListProductsComponent, FooterComponent, ProductBoxComponent, WhiteRoundButtonComponent, BlackSquareButtonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

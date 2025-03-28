@@ -8,10 +8,11 @@ import { OrangeRoundButtonComponent } from "../../components/buttons/orange-roun
 import { RegisterInputLayoutComponent } from "../../components/register-input-layout/register-input-layout.component";
 import { PasswordInputLayoutComponent } from "../../components/password-input-layout/password-input-layout.component";
 import { OrangeSquareButtonComponent } from "../../components/buttons/orange-square-button/orange-square-button.component";
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-cart',
-  imports: [HeaderComponent, ProfileSettingsLayoutComponent, AddressSettingsLayoutComponent, CardSettingsLayoutComponent, OrangeRoundButtonComponent, RegisterInputLayoutComponent, PasswordInputLayoutComponent, OrangeSquareButtonComponent],
+  imports: [HeaderComponent, ProfileSettingsLayoutComponent, AddressSettingsLayoutComponent, CardSettingsLayoutComponent, OrangeRoundButtonComponent, RegisterInputLayoutComponent, PasswordInputLayoutComponent, OrangeSquareButtonComponent, FooterComponent],
   templateUrl: './cart.component.html',
   styleUrl: './cart.component.css'
 })
