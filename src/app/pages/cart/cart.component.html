@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="box">
+    <app-profile-settings-layout profileSettingLabel="Nome" profileSettingInput="Nicole Lins Coelho"
+        blackRoundButtonEdit="editar">
+    </app-profile-settings-layout>
+
+
+    <app-address-settings-layout logradouro="Rua dos bobos" numero="04" bairro="Bairro daora" uf="São Paulo - SP"
+        cep="00000-00" blackRoundButtonEdit="editar"></app-address-settings-layout>
+
+    <app-card-settings-layout bandeira="assets/images/MasterCard.svg" altBandeira="MasterCard icon"
+        nomeBandeira="MasterCard" numeroCartao="XXXX XXXX XXXX 1234" blackRoundButtonDelete="excluir"
+        blackRoundButtonStandard="tornar padrão"></app-card-settings-layout>
+
+    <app-orange-round-button orangeRoundButton="excluir perfil"></app-orange-round-button>
+
+    
+    <div class="teste">
+        <app-register-input-layout tema="tema-escuro" label="e-mail" email="Digite seu email"></app-register-input-layout>
+        <app-password-input-layout tema="tema-escuro" label="senha" password="Digite sua senha"></app-password-input-layout>
+
+        <app-orange-square-button tema="tema-claro" orangeSquareButton="cadastrar"></app-orange-square-button>
+    </div>
+</div>

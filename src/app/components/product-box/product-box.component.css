@@ -1,0 +1,39 @@
+.product-box {
+    padding: 1rem;
+
+    transition: .5s;
+}
+
+.product-box:hover {
+    filter: brightness(90%); 
+}
+
+.product-box:hover {
+    cursor: pointer;
+}
+
+.product-box img {
+    border-radius: .5rem;
+}
+
+.info-product {
+    margin-top: 1rem;
+}
+
+.avaliacao {
+    display: flex;
+    gap: .5rem;
+    align-items: baseline;
+}
+
+.stars {
+    display: flex;
+    gap: .2rem;
+
+    color: var(--amarelo);
+}
+
+.avaliacao .stars {
+    font-size: 1.2rem;
+    
+}

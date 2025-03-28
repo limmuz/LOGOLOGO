@@ -1,0 +1,20 @@
+button {
+    text-transform: uppercase;
+
+    padding: 1rem 0;
+    width: 10rem;
+    background-color: var(--laranja);
+
+    color: var(--branco);
+    font-weight: bold;
+
+    border-radius: 5rem;
+
+    transition: .5s;
+}
+
+button:hover {
+    background-color: var(--cinza);
+
+    color: var(--branco);
+}

@@ -1,0 +1,19 @@
+.row {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+}
+
+.novidades {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.products-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

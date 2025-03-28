@@ -1,0 +1,41 @@
+.tema-claro {
+    text-transform: uppercase;
+
+    padding: 1rem 0;
+    width: 15rem;
+    background-color: var(--laranja);
+
+    color: var(--branco);
+    font-weight: bold;
+
+    border-radius: .3rem;
+
+    transition: .5s;
+}
+
+.tema-claro:hover {
+    background-color: var(--cinza);
+
+    color: var(--branco);
+}
+
+.tema-escuro {
+    text-transform: uppercase;
+
+    padding: 1rem 0;
+    width: 15rem;
+    background-color: var(--laranja);
+
+    color: var(--branco);
+    font-weight: bold;
+
+    border-radius: .3rem;
+
+    transition: .5s;
+}
+
+.tema-escuro:hover {
+    background-color: var(--branco);
+
+    color: var(--cinza);
+}

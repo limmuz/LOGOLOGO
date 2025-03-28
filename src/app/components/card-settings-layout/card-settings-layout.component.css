@@ -1,0 +1,16 @@
+.card-layout {
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem;
+}
+
+.cartao {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.btn {
+    display: flex;
+    gap: 1rem;
+}
