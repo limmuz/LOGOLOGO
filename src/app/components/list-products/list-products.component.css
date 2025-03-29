@@ -9,6 +9,10 @@
     color: var(--cinza);
 }
 
+ul {
+    margin-bottom: 0;
+}
+
 .list-categories li {
     cursor: pointer;
 

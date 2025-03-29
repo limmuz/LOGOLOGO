@@ -1,20 +1,27 @@
-.nav, .navegacao {
+.nav {
+    background-color: var(--cinza);
+
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    gap: 2rem;
+
+    height: 12vh;
+}
+
+.navegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     gap: 1rem;
 }
 
-.nav {
-    padding: 1rem 7rem;
-    background-color: var(--cinza);
+ul {
+    margin-bottom: 0;
+    padding-left: 0;
 }
 
-.logo {
-    color: var(--laranja);
-
-    cursor: pointer;
-}
 
 .input {
     width: 50%;

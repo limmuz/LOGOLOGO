@@ -10,7 +10,7 @@ footer, .redes {
     gap: 1rem;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem 0;
+    padding: 1rem 0;
 
     color: var(--laranja);
 }
