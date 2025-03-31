@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './product-box.component.css'
 })
 export class ProductBoxComponent {
-  @Input() caminho: string = "";
+  @Input() caminhoImagem: string = "";
   @Input() alt: string = "";
   @Input() preco: string = "";
 }

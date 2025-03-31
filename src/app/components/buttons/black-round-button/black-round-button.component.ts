@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 })
 export class BlackRoundButtonComponent {
   @Input() blackRoundButton: string = ""
+  @Input() classIcon: string = ""
 }

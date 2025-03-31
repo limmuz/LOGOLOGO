@@ -7,14 +7,14 @@ button {
 
     color: var(--branco);
     font-weight: bold;
-
+    
     border-radius: 5rem;
-
+    
     transition: .5s;
 }
 
 button:hover {
     background-color: var(--laranja-claro);
-
+    
     color: var(--cinza);
 }

@@ -41,7 +41,7 @@ h2, .cadastrar {
 
 .btns {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 span {
