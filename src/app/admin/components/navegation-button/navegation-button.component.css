@@ -1,0 +1,19 @@
+.navegation-button {
+    height: 8vh;
+    width: 8vh;
+
+    border-radius: 100px;
+
+    color: var(--branco);
+    font-size: 2rem;
+
+    background-color: var(--cinza);
+
+    transition: .5s;
+}
+
+
+.navegation-button:hover {
+    background-color: var(--laranja);
+    
+}

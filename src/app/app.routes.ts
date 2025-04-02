@@ -12,6 +12,10 @@ import { CalcadosComponent } from './pages/calcados/calcados.component';
 import { AcessoriosComponent } from './pages/acessorios/acessorios.component';
 import { UnderConstructionsComponent } from './components/under-constructions/under-constructions.component';
 
+import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.component';
+import { NotificationAdminComponent } from './admin/pages/notification-admin/notification-admin.component';
+import { LogOutAdminComponent } from './admin/pages/log-out-admin/log-out-admin.component';
+
 export const routes: Routes = [
     {
         path: "",
@@ -67,6 +71,21 @@ export const routes: Routes = [
         path: "em-contrucao",
         component: UnderConstructionsComponent,
         title: "LOGOLOGO - Em contrução"
+    },
+    {
+        path: "admin",
+        component: HomeAdminComponent,
+        title: "LOGOLOGO - Admin"
+    },
+    {
+        path: "notificacoes",
+        component: NotificationAdminComponent,
+        title: "LOGOLOGO - Notificações"
+    },
+    {
+        path: "logout",
+        component: LogOutAdminComponent,
+        title: "LOGOLOGO - Log Out"
     },
     {
         path: "404",

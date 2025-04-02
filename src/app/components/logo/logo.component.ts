@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,5 +8,5 @@ import { RouterModule } from '@angular/router';
   styleUrl: './logo.component.css'
 })
 export class LogoComponent {
-
+  @Input() title: string = ""
 }
