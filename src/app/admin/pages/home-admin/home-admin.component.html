@@ -1,3 +1,68 @@
 <app-admin-layout>
-    
+    <div class="listagem">
+        <div class="header">
+            <div class="input">
+                <input type="text" name="pesquisar" id="pesquisar" placeholder="Digite o nome de um produto...">
+                <button class="bi bi-search"></button>
+            </div>
+
+            <i class="bi bi-bell" routerLink="/notificacoes"></i>
+
+            <div class="profile">
+                <i class="bi bi-person-circle"></i>
+
+                <div class="text">
+                    <p>Nicole</p>
+                    <p>nicole.lins&#64;logologo.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="table-header">
+            <h2>Produtos</h2>
+
+            <div class="controller">
+                <div class="mostrar">
+                    <h3>Mostrar</h3>
+                    <input type="number" name="numero" id="numero">
+                </div>
+
+                <button>
+                    <i class="bi bi-plus-circle"></i>
+                    Adicionar novo produto
+                </button>
+            </div>
+        </div>
+
+        <table>
+            <thead>
+                <th>ID</th>
+                <th>Imagem</th>
+                <th>Nome do produto</th>
+                <th>Descrição</th>
+                <th>Quantidade no estoque</th>
+                <th>Tamanho</th>
+                <th>Preço</th>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <th>12</th>
+                    <th>Imagem</th>
+                    <th>Camisa</th>
+                    <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, impedit quasi atque non quisquam laborum aliquam repellat placeat dignissimos, quo cupiditate mollitia omnis ab eum accusantium minus harum velit. Quisquam.</th>
+                    <th>
+                        5544
+                    </th>
+                    <th>GG</th>
+                    <th>5156</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
 </app-admin-layout>

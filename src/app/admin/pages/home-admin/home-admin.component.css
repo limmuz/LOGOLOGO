@@ -1,0 +1,144 @@
+.listagem {
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.input input {
+    height: 3rem;
+    width: 60vw;
+    padding: 0 1rem;
+
+    color: var(-cinza);
+
+    border: none;
+    outline: none;
+    border-radius: 50px 0 0 50px;
+
+    background-color: var(--branco);
+}
+
+.input button {
+    border-radius: 0 50px 50px 0;
+
+    background-color: var(--branco);
+    height: 3rem;
+    width: 3rem;
+
+    transition: .5s;
+}
+
+.input button:hover {
+    background-color: var(--laranja);
+}
+
+i {
+    font-size: 2rem;
+
+    transition: .5s;
+}
+
+.header i:hover {
+    color: var(--laranja);
+}
+
+.profile {
+    display: flex;
+    gap: 1rem;
+
+    transition: .5s;
+}
+
+.profile:hover {
+    color: var(--laranja);
+}
+
+.text p {
+    margin-bottom: 0;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.table-header h2 {
+    font-size: 2rem;
+
+    margin-bottom: 0;
+}
+
+.controller {
+    display: flex;
+    gap: 3rem;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mostrar {
+    display: flex;
+    gap: .5rem;
+}
+
+.mostrar h3 {
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.mostrar input {
+    width: 4em;
+    height: 100%;
+
+    outline: none;
+}
+
+.controller button {
+    background-color: var(--laranja);
+
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    padding: 0 1rem;
+
+    border-radius: .5rem;
+
+    transition: .5s;
+}
+
+.controller button:hover {
+    background-color: var(--cinza);
+
+    color: var(--branco);
+}
+
+table {
+    border-collapse: collapse;
+    /* Faz as bordas se fundirem */
+    width: 100%;
+}
+
+th,
+td {
+    border: 1px solid #000;
+    /* Borda de 1px sólida preta */
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+    /* Cor de fundo para cabeçalhos */
+}
+
+tr, td {
+    border: 1px solid #000;
+    /* Borda de 1px sólida preta */
+    padding: 8px;
+    text-align: left;
+}
