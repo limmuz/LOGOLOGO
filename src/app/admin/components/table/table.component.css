@@ -1,0 +1,82 @@
+.tabela {
+    width: 100%;
+    overflow-x: auto;
+    max-height: 67vh;
+    overflow-y: auto;
+    padding: .5rem;
+
+    border-radius: 1rem;
+
+    background-color: var(--branco);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+
+    color: var(--branco);
+    
+    background-color: var(--cinza);
+}
+
+thead th {
+    border-bottom: 1px solid var(--cinza);
+    padding: 8px;
+    text-align: center;
+
+}
+
+tbody th {
+    border-bottom: 1px solid var(--cinza);
+    padding: 8px;
+    text-align: center;
+    font-weight: normal;
+}
+
+tbody tr th i {
+    cursor: pointer;
+
+    font-size: 1.5rem;
+
+    transition: .5s;
+}
+
+tbody tr th i:hover {
+    color: var(--laranja);
+}
+
+.descricao {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 10rem;
+}
+
+/* SCROLL BAR */
+
+.tabela::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+.tabela::-webkit-scrollbar-track {
+    background: var(--branco);
+    border-radius: 20px;
+}
+
+.tabela::-webkit-scrollbar-thumb {
+    background-color: var(--laranja);
+    border-radius: 20px;
+    border: 3px solid var(--branco);
+    transition: background-color 0.3s;
+}
+
+.tabela::-webkit-scrollbar-thumb:hover {
+    background-color: var(--laranja);
+}

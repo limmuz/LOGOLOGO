@@ -15,6 +15,7 @@ import { UnderConstructionsComponent } from './components/under-constructions/un
 import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.component';
 import { NotificationAdminComponent } from './admin/pages/notification-admin/notification-admin.component';
 import { LogOutAdminComponent } from './admin/pages/log-out-admin/log-out-admin.component';
+import { AdminComponent } from './admin/admin.component';
 
 export const routes: Routes = [
     {
@@ -74,7 +75,7 @@ export const routes: Routes = [
     },
     {
         path: "admin",
-        component: HomeAdminComponent,
+        component: AdminComponent,
         title: "LOGOLOGO - Admin"
     },
     {

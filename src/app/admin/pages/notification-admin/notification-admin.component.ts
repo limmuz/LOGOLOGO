@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AdminLayoutComponent } from "../../components/admin-layout/admin-layout.component";
 
 @Component({
   selector: 'app-notification-admin',
-  imports: [],
+  imports: [AdminLayoutComponent],
   templateUrl: './notification-admin.component.html',
   styleUrl: './notification-admin.component.css'
 })

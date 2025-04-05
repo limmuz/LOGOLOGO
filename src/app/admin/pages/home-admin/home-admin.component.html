@@ -1,5 +1,4 @@
-<app-admin-layout>
-    <div class="listagem">
+<main class="home">
         <div class="header">
             <div class="input">
                 <input type="text" name="pesquisar" id="pesquisar" placeholder="Digite o nome de um produto...">
@@ -18,13 +17,13 @@
             </div>
         </div>
 
-        <div class="table-header">
+        <div class="cabecalho-tabela">
             <h2>Produtos</h2>
 
             <div class="controller">
                 <div class="mostrar">
                     <h3>Mostrar</h3>
-                    <input type="number" name="numero" id="numero">
+                    <input type="number" name="numero" id="numero" value="10">
                 </div>
 
                 <button>
@@ -34,35 +33,5 @@
             </div>
         </div>
 
-        <table>
-            <thead>
-                <th>ID</th>
-                <th>Imagem</th>
-                <th>Nome do produto</th>
-                <th>Descrição</th>
-                <th>Quantidade no estoque</th>
-                <th>Tamanho</th>
-                <th>Preço</th>
-            </thead>
-
-            <tbody>
-
-                <tr>
-                    <th>12</th>
-                    <th>Imagem</th>
-                    <th>Camisa</th>
-                    <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, impedit quasi atque non quisquam laborum aliquam repellat placeat dignissimos, quo cupiditate mollitia omnis ab eum accusantium minus harum velit. Quisquam.</th>
-                    <th>
-                        5544
-                    </th>
-                    <th>GG</th>
-                    <th>5156</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </tbody>
-        </table>
-
-    </div>
-</app-admin-layout>
+        <app-table></app-table>
+</main>
