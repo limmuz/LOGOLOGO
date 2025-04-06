@@ -58,6 +58,11 @@ tbody tr th i:hover {
     max-width: 10rem;
 }
 
+.espaco {
+    display: flex;
+    gap: 1rem;
+}
+
 /* SCROLL BAR */
 
 .tabela::-webkit-scrollbar {

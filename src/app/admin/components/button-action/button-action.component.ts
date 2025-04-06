@@ -7,6 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './button-action.component.css'
 })
 export class ButtonActionComponent {
-  @Input() textBtn:string = ""
   @Input() cor:string = ""
 }

@@ -1,0 +1,28 @@
+<div class="modal-overlay" *ngIf="isOpen">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2> Informações do produto </h2>
+        </div>
+
+        <div class="modal-main">
+            <div class="imagem">
+                <img src="https://acdn-us.mitiendanube.com/stores/002/037/298/products/r8tpgs9-69611169236149a31516521949612638-1024-1024.jpg" alt="Imagem do produto">
+
+                <app-button-action cor="laranja">Ver Imagem</app-button-action>
+            </div>
+            <div class="inputs">
+                <app-input-info-products labelFor="Nome" textLabel="Nome do Produto" qtdCaracteres="0/255" inputPlaceholder="Digite o nome do produto"></app-input-info-products>
+                <app-text-area-info-products labelFor="descricao" textLabel="Descrição do produto" textAreaPlaceholder="Digite a descrição do produto"></app-text-area-info-products>
+                <div class="lado">
+                    <app-input-info-products labelFor="qtdProdutos" textLabel="Quantidade" inputPlaceholder="Ex: 14"></app-input-info-products>
+                    <app-input-info-products labelFor="tamanho" textLabel="Tamanho" inputPlaceholder="Ex: GG"></app-input-info-products>
+                    <app-input-info-products labelFor="preco" textLabel="Preço" inputPlaceholder="Ex: 69,99"></app-input-info-products>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

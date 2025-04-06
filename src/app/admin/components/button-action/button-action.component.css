@@ -3,11 +3,11 @@ button {
     height: 2.5rem;
 
     text-align: center;
-
-    border-radius: .5rem;
-
+    text-transform: capitalize;
     color: var(--branco);
     font-weight: bold;
+
+    border-radius: .5rem;
 
     transition: .5s;
 }
@@ -20,6 +20,7 @@ button {
     background-color: var(--lilas);
 }
 
-button:hover, button:focus {
+button:hover,
+button:focus {
     background-color: var(--cinza);
 }

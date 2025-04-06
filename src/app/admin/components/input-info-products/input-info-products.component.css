@@ -1,0 +1,26 @@
+.lado {
+    display: flex;
+    justify-content: space-between;
+}
+
+label {
+    text-transform: capitalize;
+}
+
+
+span {
+    color: red;
+}
+
+p {
+    color: var(--cinza-claro);
+}
+
+input {
+    outline: none;
+    padding: .5rem .2rem;
+    width: 100%;
+
+    border: 1px solid var(--cinza);
+    border-radius: .2rem;
+}

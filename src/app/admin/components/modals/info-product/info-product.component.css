@@ -1,0 +1,44 @@
+.modal-overlay {
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 70vw;
+    height: 85vh;
+}
+
+.modal-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.imagem {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.imagem img {
+    border: 2px dashed var(--cinza);
+    border-radius: 1rem;
+
+    max-width: 15vw;
+
+    width: 100%;
+    height: auto;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.lado {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
