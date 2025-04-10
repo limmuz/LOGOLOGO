@@ -1,0 +1,9 @@
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+
+    overflow-x: auto;
+    max-height: 80vh;
+    overflow-y: auto;
+}

@@ -1,0 +1,89 @@
+.notifications {
+    border-radius: .5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 10vh;
+}
+
+.icon {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    font-size: 2.5rem;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 1rem;
+
+    background-color: var(--branco);
+}
+
+.content h3 {
+    font-size: 1.5rem;
+}
+
+.content,
+.espaco {
+    display: flex;
+    align-items: center;
+}
+
+.espaco {
+    gap: .5rem;
+
+    color: var(--cinza-medio);
+}
+
+.bi-x-circle {
+    font-size: 2rem;
+
+    cursor: pointer;
+
+    transition: .5s;
+}
+
+.bi-x-circle:hover {
+    color: var(--laranja);
+}
+
+.vermelho {
+    background-color: var(--notifications-vermelho);
+}
+
+.borda-vermelha {
+    border: 2px solid var(--notifications-vermelho);
+}
+
+.azul {
+    background-color: var(--notifications-azul);
+}
+
+.borda-azul {
+    border: 2px solid var(--notifications-azul);
+}
+
+.amarelo {
+    background-color: var(--notifications-amarelo);
+}
+
+.borda-amarelo {
+    border: 2px solid var(--notifications-amarelo);
+}
+
+.verde {
+    background-color: var(--notifications-verde);
+}
+
+.borda-verde {
+    border: 2px solid var(--notifications-verde);
+}
