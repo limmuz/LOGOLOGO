@@ -1,0 +1,32 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.settings {
+    display: flex;
+    gap: 1rem;
+}
+
+i {
+    font-size: 2rem;
+
+    transition: .5s;
+}
+
+.profile {
+    display: flex;
+    gap: 1rem;
+
+    transition: .5s;
+}
+
+.bi:hover, .profile:hover {
+    color: var(--laranja);
+}
+
+.text p {
+    margin-bottom: 0;
+}
