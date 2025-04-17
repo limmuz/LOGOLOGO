@@ -10,22 +10,22 @@ import { ButtonActionComponent } from "../button-action/button-action.component"
   styleUrl: './table.component.css'
 })
 export class TableComponent {
-modalConfirmIsOpen = false;
-modalInfoIsOpen = false;
+  modalConfirmIsOpen = false;
+  modalInfoIsOpen = false;
 
-openConfirmModal() {
-  this.modalConfirmIsOpen = true;
-}
+  openConfirmModal() {
+    this.modalConfirmIsOpen = true;
+  }
 
-openInfoModal() {
-  this.modalInfoIsOpen = true;
-}
+  openInfoModal() {
+    this.modalInfoIsOpen = true;
+  }
 
-onConfirmModalClosed() {
-  this.modalConfirmIsOpen = false;
-}
+  onConfirmModalClosed() {
+    this.modalConfirmIsOpen = false;
+  }
 
-onInfoModalClosed() {
-  this.modalInfoIsOpen = false;
-}
+  onInfoModalClosed() {
+    this.modalInfoIsOpen = false;
+  }
 }

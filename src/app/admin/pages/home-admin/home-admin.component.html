@@ -26,7 +26,7 @@
                     <input type="number" name="numero" id="numero" value="10">
                 </div>
 
-                <button>
+                <button (click)="openInfoModal()">
                     <i class="bi bi-plus-circle"></i>
                     Adicionar novo produto
                 </button>
@@ -35,3 +35,16 @@
 
         <app-table></app-table>
 </main>
+
+
+<app-info-product [isOpen]="modalInfoIsOpen" (closed)="onInfoModalClosed()" title="Informações do Produto" produtoImagem="" valorInputNome="" valorTextArea="" quantidadeEstoque="" tamanhoProduto="" precoProduto="">
+    <div class="espaco">
+        <app-button-action (click)="onInfoModalClosed()" cor="lilas">
+            Fechar
+        </app-button-action>
+
+        <app-button-action (click)="openConfirmModal()" cor="laranja">
+            Cadastrar
+        </app-button-action>
+    </div>
+</app-info-product>

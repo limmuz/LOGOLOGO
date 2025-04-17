@@ -137,3 +137,7 @@ i {
     color: var(--branco);
 }
 
+.espaco {
+    display: flex;
+    gap: 1rem;
+}

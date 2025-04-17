@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { ButtonActionComponent } from "../../button-action/button-action.component";
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-confirm-action',
   standalone: true,
-  imports: [CommonModule, ButtonActionComponent],
+  imports: [CommonModule],
   templateUrl: './confirm-action.component.html',
   styleUrls: [
     './confirm-action.component.css', 
