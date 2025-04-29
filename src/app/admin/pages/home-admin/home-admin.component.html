@@ -36,15 +36,12 @@
         <app-table></app-table>
 </main>
 
-<app-confirm-action [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()" title="Cadastrar produto">
-    <p>Tem certeza que deseja cadastrar este produto?</p>
+<app-confirm-action [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()" title="Produto cadastrado">
+    <p>Produto cadastrado com sucesso!</p>
 
     <div class="espaco">
-        <app-button-action cor="lilas">
-            Cancelar
-        </app-button-action>
-        <app-button-action cor="laranja">
-            SIM
+        <app-button-action cor="lilas" (click)="fecharModalConfirmarCadastro()">
+            Fechar
         </app-button-action>
     </div>
 </app-confirm-action>
