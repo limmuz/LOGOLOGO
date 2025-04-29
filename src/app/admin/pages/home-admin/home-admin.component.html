@@ -26,7 +26,7 @@
                     <input type="number" name="numero" id="numero" value="10">
                 </div>
 
-                <button (click)="openInfoModal()">
+                <button (click)="abrirModalCadastrarProduto()">
                     <i class="bi bi-plus-circle"></i>
                     Adicionar novo produto
                 </button>
@@ -36,14 +36,30 @@
         <app-table></app-table>
 </main>
 
+<app-confirm-action [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()" title="Cadastrar produto">
+    <p>Tem certeza que deseja cadastrar este produto?</p>
 
-<app-info-product [isOpen]="modalInfoIsOpen" (closed)="onInfoModalClosed()" title="Informações do Produto" produtoImagem="" valorInputNome="" valorTextArea="" quantidadeEstoque="" tamanhoProduto="" precoProduto="">
     <div class="espaco">
-        <app-button-action (click)="onInfoModalClosed()" cor="lilas">
+        <app-button-action cor="lilas">
+            Cancelar
+        </app-button-action>
+        <app-button-action cor="laranja">
+            SIM
+        </app-button-action>
+    </div>
+</app-confirm-action>
+
+<app-info-product [isOpen]="modalCadastrarProduto" (closed)="fecharModalCadastrarProduto()" title="Cadastrar Produto"
+    produtoImagem=""
+    valorInputNome=""
+    valorTextArea=""
+    quantidadeEstoque="" tamanhoProduto="" precoProduto="">
+    <div class="espaco">
+        <app-button-action (click)="fecharModalCadastrarProduto()" cor="lilas">
             Fechar
         </app-button-action>
 
-        <app-button-action (click)="openConfirmModal()" cor="laranja">
+        <app-button-action (click)="abriModalConfirmarCadastro()" cor="laranja">
             Cadastrar
         </app-button-action>
     </div>

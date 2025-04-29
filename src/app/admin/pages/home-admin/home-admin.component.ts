@@ -15,6 +15,27 @@ export class HomeAdminComponent {
   @Input() nome: string = ""
   @Input() email: string = ""
 
+  modalCadastrarProduto = false
+  modalConfirmarCadastro = false
+
+  abrirModalCadastrarProduto() {
+    this.modalCadastrarProduto = true
+  }
+
+  fecharModalCadastrarProduto() {
+    this.modalCadastrarProduto = false
+  }
+
+  abriModalConfirmarCadastro() {
+    this.modalConfirmarCadastro = true
+  }
+
+  fecharModalConfirmarCadastro() {
+    this.modalConfirmarCadastro = false
+  }
+
+
+  /*
   modalConfirmIsOpen = false;
   modalInfoIsOpen = false;
 
@@ -33,4 +54,6 @@ export class HomeAdminComponent {
   onInfoModalClosed() {
     this.modalInfoIsOpen = false;
   }
+
+  */
 }
