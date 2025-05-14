@@ -26,8 +26,9 @@
                     <input type="number" name="numero" id="numero" value="10">
                 </div>
 
-                <button style="color: whitesmoke;">
-                    <i class="bi bi-plus-circle" ></i>
+                <button (click)="abrirModalCadastrarProduto()" style="color: whitesmoke;">
+                    <i class="bi bi-plus-circle"></i>
+                </button>
                     Adicionar novo produto
                 </button>
             </div>
@@ -35,3 +36,29 @@
 
         <app-table></app-table>
 </main>
+
+<app-confirm-action [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()" title="Produto cadastrado">
+    <p>Produto cadastrado com sucesso!</p>
+
+    <div class="espaco">
+        <app-button-action cor="lilas" (click)="fecharModalConfirmarCadastro()">
+            Fechar
+        </app-button-action>
+    </div>
+</app-confirm-action>
+
+<app-info-product [isOpen]="modalCadastrarProduto" (closed)="fecharModalCadastrarProduto()" title="Cadastrar Produto"
+    produtoImagem=""
+    valorInputNome=""
+    valorTextArea=""
+    quantidadeEstoque="" tamanhoProduto="" precoProduto="">
+    <div class="espaco">
+        <app-button-action (click)="fecharModalCadastrarProduto()" cor="lilas">
+            Fechar
+        </app-button-action>
+
+        <app-button-action (click)="abriModalConfirmarCadastro()" cor="laranja">
+            Cadastrar
+        </app-button-action>
+    </div>
+</app-info-product>
