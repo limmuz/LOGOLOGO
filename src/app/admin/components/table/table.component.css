@@ -23,10 +23,13 @@ thead {
     
     background-color: var(--cinza);
 }
-
 th.ident {
     border-top-left-radius: 15px;
 }
+
+
+th.ident {
+    border-top-left-radius: 15px;
 
 th.qfinal{
     border-top-right-radius: 15px;
