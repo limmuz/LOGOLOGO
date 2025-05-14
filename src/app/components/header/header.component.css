@@ -23,27 +23,25 @@
     margin: 0 auto;
 }
 
-/* Container principal da logo (imagem + texto) */
 .logo {
     display: flex;
-    align-items: flex-start; /* Alinha verticalmente */
-    gap: 0.5rem; /* Espaço entre imagem e texto */
+    align-items: flex-start;
+    gap: 0.5rem;
     cursor: pointer;
-    height: 100%; /* Ocupa toda altura da header */
-    padding: 0.5rem 0; /* Espaçamento interno */
+    height: 100%; 
+    padding: 0.5rem 0; 
 }
 
-/* Estilo para a IMAGEM da logo */
+
 .logo img {
-    height: clamp(0.9rem, 2vw, 1.5rem); /* Reduzido de 25px/5vh/50px */
+    height: clamp(0.9rem, 2vw, 1.5rem); 
     width: auto;
     object-fit: contain;
     transition: all 0.3s ease;
 }
 
-/* Texto com tamanho mínimo ajustado */
 .logo h1 {
-    font-size: clamp(0.9rem, 2vw, 1.5rem); /* Reduzido de 0.9rem/2vw/1.5rem */
+    font-size: clamp(0.9rem, 2vw, 1.5rem); 
     color: var(--laranja);
     margin: 0;
     white-space: nowrap;
@@ -51,11 +49,10 @@
 }
 
 
-/* Grupo de Pesquisa - Redução inteligente */
 .search-group {
     display: flex;
     flex: 1;
-    min-width: 0; /* Permite que encolha abaixo do conteúdo */
+    min-width: 0; 
 }
 
 .search-group input {
@@ -89,4 +86,6 @@
     border: none;
     padding: 0.2rem;
     min-width: 1.5rem;
+
 }
+
