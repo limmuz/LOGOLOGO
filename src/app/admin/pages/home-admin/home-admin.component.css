@@ -87,8 +87,7 @@ i {
     gap: 3rem;
     justify-content: space-between;
     align-items: center;
-    
-}
+    }
 
 .mostrar {
     display: flex;
@@ -119,8 +118,7 @@ i {
 }
 
 .controller button {
-    background-color: var(--lilas);
-
+    background-color: var(--laranja);
     display: flex;
     align-items: center;
     gap: .5rem;
@@ -130,7 +128,7 @@ i {
 }
 
 .controller button:hover {
-    background-color: var(--laranja);
+    background-color: var(--cinza);
     color: var(--branco);
 }
 
