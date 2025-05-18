@@ -4,6 +4,7 @@ import { InfoProductComponent } from "../modals/info-product/info-product.compon
 import { ButtonActionComponent } from "../button-action/button-action.component";
 import { Produto } from '../../../core/types/types';
 import { ProdutoService } from '../../../core/services/produto.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
@@ -14,7 +15,7 @@ import { ProdutoService } from '../../../core/services/produto.service';
 export class TableComponent implements OnInit {
   listaProdutos: Produto[] = [];
 
-  constructor(private service: ProdutoService) {}
+  constructor(private service: ProdutoService, private router: Router) {}
 
   ngOnInit(): void {
     this.service.listar().subscribe((produtos) => {
@@ -59,24 +60,11 @@ export class TableComponent implements OnInit {
     this.modalConfirmarAlteracaoAberto = false
   }
 
-  /*
-  modalConfirmIsOpen = false;
-  modalInfoIsOpen = false;
-
-  openConfirmModal() {
-    this.modalConfirmIsOpen = true;
+  excluir(id: number) {
+    if(id) {
+      this.service.excluir(id).subscribe(() => {
+        window.location.reload()
+      })
+    }
   }
-
-  openInfoModal() {
-    this.modalInfoIsOpen = true;
-  }
-
-  onConfirmModalClosed() {
-    this.modalConfirmIsOpen = false;
-  }
-
-  onInfoModalClosed() {
-    this.modalInfoIsOpen = false;
-  }
-  */
 }

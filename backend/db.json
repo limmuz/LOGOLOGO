@@ -1,22 +1,22 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "imagem": "",
-            "nome": "Camiseta",
-            "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
-            "quantidade": 123,
-            "tamanho": "GG",
-            "preco": 74.90
-        },
-        {
-            "id": 2,
-            "imagem": "",
-            "nome": "Bermuda",
-            "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
-            "quantidade": 45,
-            "tamanho": "GG",
-            "preco": 154.99
-        }
-    ]
+  "produtos": [
+    {
+      "id": "1",
+      "imagem": "",
+      "nome": "Camiseta",
+      "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
+      "quantidade": 123,
+      "tamanho": "GG",
+      "preco": 74.9
+    },
+    {
+      "id": "2",
+      "imagem": "",
+      "nome": "Bermuda",
+      "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
+      "quantidade": 45,
+      "tamanho": "GG",
+      "preco": 154.99
+    }
+  ]
 }

@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-text-area-info-products',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './text-area-info-products.component.html',
   styleUrl: './text-area-info-products.component.css'
 })

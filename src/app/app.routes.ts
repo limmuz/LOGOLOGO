@@ -76,23 +76,26 @@ export const routes: Routes = [
     {
         path: "admin",
         component: AdminComponent,
-        title: "LOGOLOGO - Admin"
+        title: "LOGOLOGO - Admin",
+        children: [
+            {
+                path: "notificacoes",
+                component: NotificationAdminComponent,
+                title: "LOGOLOGO - Notificações"
+            },
+            {
+                path: "logout",
+                component: LogOutAdminComponent,
+                title: "LOGOLOGO - Log Out"
+            }
+        ]
     },
-    {
-        path: "notificacoes",
-        component: NotificationAdminComponent,
-        title: "LOGOLOGO - Notificações"
-    },
-    {
-        path: "logout",
-        component: LogOutAdminComponent,
-        title: "LOGOLOGO - Log Out"
-    },
+    /*
     {
         path: "404",
         component: ErrorPageComponent,
         title: "LOGOLOGO - Pagina não encontrada"
-    }, 
+    },*/
     {
         path: "**",
         redirectTo: "/404"
