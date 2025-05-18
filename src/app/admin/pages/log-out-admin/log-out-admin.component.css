@@ -4,11 +4,9 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #f8f9fa;
-    border: solid #f8f9fa ;
-    border-radius: 25px;
+    background-color: var(--branco);
+    border-radius: 1.5rem;
 }
-
 
 .profile {
     display: flex;
@@ -18,7 +16,7 @@ header {
 
 .bi-person-circle {
     font-size: 2rem;
-    color: #6c757d;
+    color: var(--cinza-medio);
 }
 
 .profile .text {
@@ -36,20 +34,18 @@ header {
 .profile .text p:last-child {
     margin: 0;
     font-size: 0.8rem;
-    color: #6c757d;
+    color: var(--cinza-medio);
 }
 
 .logout-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh - 120px);
     padding: 2rem;
 }
 
-
 .logout-card {
-    background: white;
+    background: var(--branco);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 2.5rem;
@@ -57,7 +53,6 @@ header {
     width: 100%;
     text-align: center;
 }
-
 
 .logout-icon {
     font-size: 3.5rem;
@@ -67,13 +62,13 @@ header {
 
 .logout-card h2 {
     font-size: 1.5rem;
-    color: #333;
+    color: var(--cinza);
     margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
 .logout-card p {
-    color: #666;
+    color: var(--cinza-medio);
     margin-bottom: 2rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -96,17 +91,18 @@ header {
 }
 
 .btn-cancel {
-    background-color: #f1f2f6;
-    color: #333;
+    background-color: var(--branco);
+    border: 1px solid var(--cinza);
+    color: var(--cinza);
 }
 
 .btn-cancel:hover {
-    background-color: #dfe4ea;
+    background-color: var(--cinza-claro);
 }
 
 .btn-confirm {
     background-color: var(--lilas);
-    color: white;
+    color: var(--branco);
 }
 
 .btn-confirm:hover {
