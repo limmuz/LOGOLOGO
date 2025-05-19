@@ -3,20 +3,110 @@
     {
       "id": "1",
       "imagem": "",
-      "nome": "Camiseta",
-      "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
+      "nome": "Camiseta Básica Preta",
+      "descricao": "Camiseta básica masculina na cor preta, feita com 100% algodão. Ideal para o dia a dia, com caimento confortável e tecido macio.",
       "quantidade": 123,
       "tamanho": "GG",
-      "preco": 74.9
+      "preco": 49.90
     },
     {
       "id": "2",
       "imagem": "",
-      "nome": "Bermuda",
-      "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
+      "nome": "Bermuda Jeans Masculina",
+      "descricao": "Bermuda jeans azul com lavagem média, bolsos frontais e traseiros. Tecido resistente e confortável, ideal para o verão.",
       "quantidade": 45,
       "tamanho": "GG",
-      "preco": 154.99
+      "preco": 119.90
+    },
+    {
+      "id": "3",
+      "imagem": "",
+      "nome": "Camisa Social Branca",
+      "descricao": "Camisa social masculina branca, ideal para ambientes formais ou ocasiões especiais. Confeccionada em algodão com elastano.",
+      "quantidade": 32,
+      "tamanho": "G",
+      "preco": 139.90
+    },
+    {
+      "id": "4",
+      "imagem": "",
+      "nome": "Moletom Cinza com Capuz",
+      "descricao": "Moletom unissex na cor cinza, com capuz ajustável e bolso canguru. Perfeito para dias frios e looks casuais.",
+      "quantidade": 60,
+      "tamanho": "GG",
+      "preco": 159.90
+    },
+    {
+      "id": "5",
+      "imagem": "",
+      "nome": "Calça Jogger Preta",
+      "descricao": "Calça jogger em moletom com elástico na cintura e tornozelos. Super confortável para o uso diário ou para atividades físicas.",
+      "quantidade": 40,
+      "tamanho": "M",
+      "preco": 99.90
+    },
+    {
+      "id": "6",
+      "imagem": "",
+      "nome": "Vestido Floral Curto",
+      "descricao": "Vestido curto com estampa floral, modelo leve e soltinho ideal para dias quentes. Alças finas e tecido leve.",
+      "quantidade": 20,
+      "tamanho": "P",
+      "preco": 89.90
+    },
+    {
+      "id": "7",
+      "imagem": "",
+      "nome": "Jaqueta Jeans",
+      "descricao": "Jaqueta jeans clássica com bolsos frontais e fechamento por botões. Item versátil para compor vários estilos.",
+      "quantidade": 18,
+      "tamanho": "G",
+      "preco": 189.90
+    },
+    {
+      "id": "8",
+      "imagem": "",
+      "nome": "Tênis Casual Branco",
+      "descricao": "Tênis branco unissex com design minimalista, ideal para o dia a dia. Solado emborrachado e interior acolchoado.",
+      "quantidade": 25,
+      "tamanho": "42",
+      "preco": 159.90
+    },
+    {
+      "id": "9",
+      "imagem": "",
+      "nome": "Saia Jeans Feminina",
+      "descricao": "Saia jeans com barra desfiada e fechamento por botão e zíper. Modelo moderno e ideal para compor looks casuais.",
+      "quantidade": 27,
+      "tamanho": "M",
+      "preco": 79.90
+    },
+    {
+      "id": "10",
+      "imagem": "",
+      "nome": "Blusa de Tricô Feminina",
+      "descricao": "Blusa de tricô com gola alta e textura canelada. Perfeita para o inverno, proporcionando conforto e estilo.",
+      "quantidade": 16,
+      "tamanho": "G",
+      "preco": 129.90
+    },
+    {
+      "id": "11",
+      "imagem": "",
+      "nome": "Regata Esportiva Masculina",
+      "descricao": "Regata feita em tecido dry fit que proporciona maior respirabilidade durante os exercícios. Ideal para academia ou corrida.",
+      "quantidade": 50,
+      "tamanho": "M",
+      "preco": 39.90
+    },
+    {
+      "id": "12",
+      "imagem": "",
+      "nome": "Shorts Fitness Feminino",
+      "descricao": "Shorts curto para atividades físicas, com tecido elástico e cós alto. Confortável e com boa sustentação.",
+      "quantidade": 36,
+      "tamanho": "P",
+      "preco": 44.90
     }
   ]
 }

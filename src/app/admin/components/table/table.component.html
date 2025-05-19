@@ -18,7 +18,7 @@
             <tr>
                 <th> {{produto.id}} </th>
                 <th><i class="bi bi-image"></i> {{ produto.imagem }} </th>
-                <th> {{ produto.nome }} </th>
+                <th class="nome"> {{ produto.nome }} </th>
                 <th class="descricao"> {{ produto.descricao }} </th>
                 <th> {{ produto.quantidade }} </th>
                 <th> {{ produto.tamanho }} </th>
@@ -62,7 +62,7 @@
     <p>Produto alterado com sucesso!</p>
 
     <div class="espaco">
-        <app-button-action cor="lilas" (click)="fecharConfirmarAlteracaoProduto()">
+        <app-button-action cor="lilas" (click)="fecharConfirmarAlteracaoProduto(); fecharAlterarProduto()">
             fechar
         </app-button-action>
     </div>
