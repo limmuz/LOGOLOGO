@@ -38,7 +38,7 @@
     <app-table></app-table>
 </main>
 
-<app-confirm-action [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()"
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()"
     title="Produto cadastrado">
     <p>Produto cadastrado com sucesso!</p>
 
@@ -49,7 +49,7 @@
     </div>
 </app-confirm-action>
 
-<app-info-product [isOpen]="modalCadastrarProduto" (closed)="fecharModalCadastrarProduto()" title="Cadastrar Produto"
+<app-info-product fundo="fundo-escuro" [isOpen]="modalCadastrarProduto" (closed)="fecharModalCadastrarProduto()" title="Cadastrar Produto"
     [(valorInputNome)]="produto.nome" [(valorTextArea)]="produto.descricao" [(quantidadeEstoque)]="produto.quantidade"
     [(tamanhoProduto)]="produto.tamanho" [(precoProduto)]="produto.preco" [produtoImagem]="produto.imagem">
     <div class="espaco">

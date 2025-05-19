@@ -28,7 +28,7 @@
                 <th><i (click)="abrirModalExclusao()" class="bi bi-trash3"></i></th>
             </tr>
 
-            <app-confirm-action [isOpen]="modalExclusaoAberto" (closed)="fecharModalExclusao()" title="Excluir produto">
+            <app-confirm-action [isOpen]="modalExclusaoAberto" (closed)="fecharModalExclusao()" fundo="fundo-claro" title="Excluir produto">
                 <p>Tem certeza que deseja excluir este produto?</p>
 
                 <div class="espaco">
@@ -45,7 +45,7 @@
     </table>
 </div>
 
-<app-info-product [isOpen]="modalInformacoesAberto" (closed)="fecharModalInformacoes()" title="Informações do Produto"
+<app-info-product fundo="fundo-escuro" [isOpen]="modalInformacoesAberto" (closed)="fecharModalInformacoes()" title="Informações do Produto"
     produtoImagem="https://acdn-us.mitiendanube.com/stores/002/037/298/products/r8tpgs9-69611169236149a31516521949612638-1024-1024.jpg"
     valorInputNome="Conjunto"
     valorTextArea="Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?"
@@ -68,7 +68,7 @@
     </div>
 </app-confirm-action>
 
-<app-info-product [isOpen]="modalAlterarProdutoAberto" (closed)="fecharAlterarProduto()" title="Alterar Produto"
+<app-info-product fundo="fundo-escuro" [isOpen]="modalAlterarProdutoAberto" (closed)="fecharAlterarProduto()" title="Alterar Produto"
     produtoImagem="https://acdn-us.mitiendanube.com/stores/002/037/298/products/r8tpgs9-69611169236149a31516521949612638-1024-1024.jpg"
     valorInputNome="Conjunto"
     valorTextArea="Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?"

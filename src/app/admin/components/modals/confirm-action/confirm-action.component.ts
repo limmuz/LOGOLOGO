@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 })
 export class ConfirmActionComponent {
   @Input() title:string = ""
+  @Input() fundo:string = ""
   @Input() isOpen = false;
   @Input() showFooter = true;
 
