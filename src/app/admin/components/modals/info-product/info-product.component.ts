@@ -22,6 +22,8 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class InfoProductComponent {
+  @Input() somenteLeitura: boolean = false;
+
   @Input() isOpen = false;
   @Output() closed = new EventEmitter<void>();
 

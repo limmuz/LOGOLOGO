@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class InputInfoProductsComponent {
   @Input() labelFor: string = "";
   @Input() textLabel: string = "";
+  @Input() disabled: boolean = false;
   @Input() qtdCaracteres: string = "";
   @Input() inputPlaceholder: string = "";
 

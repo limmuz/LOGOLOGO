@@ -8,6 +8,7 @@
     type="text"
     name="{{ labelFor }}"
     id="{{ labelFor }}"
+    [disabled]="disabled"
     placeholder="{{ inputPlaceholder }}"
     [value]="inputValue"
     (input)="onInput($event)"

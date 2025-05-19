@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class TextAreaInfoProductsComponent {
   @Input() labelFor: string = "";
   @Input() textLabel: string = "";
+  @Input() disabled: boolean = false;
   @Input() textAreaPlaceholder: string = "";
 
   @Input() textAreaValue: string = "";

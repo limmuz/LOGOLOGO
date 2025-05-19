@@ -13,6 +13,7 @@ import { Router } from '@angular/router';
   styleUrl: './table.component.css'
 })
 export class TableComponent implements OnInit {
+  
   listaProdutos: Produto[] = [];
 
   constructor(private service: ProdutoService, private router: Router) {}
