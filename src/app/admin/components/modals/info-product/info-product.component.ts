@@ -8,7 +8,13 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-info-product',
-  imports: [FormsModule, CommonModule, ButtonActionComponent, InputInfoProductsComponent, TextAreaInfoProductsComponent],
+  imports: [
+    FormsModule,
+    CommonModule,
+    ButtonActionComponent,
+    InputInfoProductsComponent,
+    TextAreaInfoProductsComponent,
+  ],
   templateUrl: './info-product.component.html',
   styleUrls: [
     '../modals.styles.css',
@@ -16,21 +22,48 @@ import { FormsModule } from '@angular/forms';
   ]
 })
 export class InfoProductComponent {
-  @Input() title: string = ""
   @Input() isOpen = false;
-  @Input() showFooter = true;
+  @Output() closed = new EventEmitter<void>();
 
   @Input() produtoImagem: string = "";
-  @Input() valorInputNome: string = "";
-  @Input() valorTextArea: string = "";
-  @Input() quantidadeEstoque: string = "";
-  @Input() tamanhoProduto: string = "";
-  @Input() precoProduto: string = "";
 
-  @Output() closed = new EventEmitter<void>();
+  @Input() valorInputNome: string = "";
+  @Output() valorInputNomeChange = new EventEmitter<string>();
+
+  @Input() valorTextArea: string = "";
+  @Output() valorTextAreaChange = new EventEmitter<string>();
+
+  @Input() quantidadeEstoque: string = "";
+  @Output() quantidadeEstoqueChange = new EventEmitter<string>();
+
+  @Input() tamanhoProduto: string = "";
+  @Output() tamanhoProdutoChange = new EventEmitter<string>();
+
+  @Input() precoProduto: string = "";
+  @Output() precoProdutoChange = new EventEmitter<string>();
 
   close() {
     this.isOpen = false;
     this.closed.emit();
+  }
+
+  onNomeChange(value: string) {
+    this.valorInputNomeChange.emit(value);
+  }
+
+  onDescricaoChange(value: string) {
+    this.valorTextAreaChange.emit(value);
+  }
+
+  onQuantidadeChange(value: string) {
+    this.quantidadeEstoqueChange.emit(value);
+  }
+
+  onTamanhoChange(value: string) {
+    this.tamanhoProdutoChange.emit(value);
+  }
+
+  onPrecoChange(value: string) {
+    this.precoProdutoChange.emit(value);
   }
 }

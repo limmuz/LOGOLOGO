@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';  // importei OnInit para lifecycle hook
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { TableComponent } from "../../components/table/table.component";
 import { InfoProductComponent } from "../../components/modals/info-product/info-product.component";
@@ -13,28 +13,15 @@ import { ProdutoService } from '../../../core/services/produto.service';
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.css'
 })
-export class HomeAdminComponent {
+export class HomeAdminComponent implements OnInit {  // implementa OnInit
+
   @Input() nome: string = ""
   @Input() email: string = ""
 
   modalCadastrarProduto = false
   modalConfirmarCadastro = false
 
-  abrirModalCadastrarProduto() {
-    this.modalCadastrarProduto = true
-  }
-
-  fecharModalCadastrarProduto() {
-    this.modalCadastrarProduto = false
-  }
-
-  abriModalConfirmarCadastro() {
-    this.modalConfirmarCadastro = true
-  }
-
-  fecharModalConfirmarCadastro() {
-    this.modalConfirmarCadastro = false
-  }
+  listaProdutos: Produto[] = [];
 
   produtoId?: number
 
@@ -60,21 +47,43 @@ export class HomeAdminComponent {
     }
   }
 
+  ngOnInit() {
+    this.carregarProdutos();
+  }
+
+  carregarProdutos() {
+    this.service.listar().subscribe(produtos => {
+      this.listaProdutos = produtos;
+    });
+  }
+
+  abrirModalCadastrarProduto() {
+    this.produto = {
+      imagem: '',
+      nome: '',
+      descricao: '',
+      quantidade: '',
+      tamanho: '',
+      preco: ''
+    };
+    this.modalCadastrarProduto = true
+  }
+
+  fecharModalCadastrarProduto() {
+    this.modalCadastrarProduto = false
+  }
+
+  abriModalConfirmarCadastro() {
+    this.modalConfirmarCadastro = true
+  }
+
+  fecharModalConfirmarCadastro() {
+    this.modalConfirmarCadastro = false
+    window.location.reload()
+  }
+
   submeter() {
-    if (this.produtoId) {
-      this.service.editar(this.produto).subscribe(() => {
-        this.router.navigate(['/produtos']);
-        setTimeout(() => {
-          window.location.reload();
-        }, 5000);
-      });
-    } else {
-      this.service.incluir(this.produto).subscribe(() => {
-        this.router.navigate(['/produtos']);
-        setTimeout(() => {
-          window.location.reload();
-        }, 5000);
-      });
-    }
+    this.service.incluir(this.produto).subscribe(() => {
+    })
   }
 }

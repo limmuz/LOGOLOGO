@@ -6,18 +6,33 @@
 
         <div class="modal-main">
             <div class="imagem">
-                <img src="{{ produtoImagem }}" alt="Imagem do produto">
+                <img [src]="produtoImagem" alt="Imagem do produto" />
 
                 <app-button-action cor="laranja">Ver Imagem</app-button-action>
             </div>
             <div class="inputs">
-                <app-input-info-products labelFor="Nome" textLabel="Nome do Produto" qtdCaracteres="0/255" inputPlaceholder="Digite o nome do produto" inputValue="{{ valorInputNome }}"></app-input-info-products>
-                <app-text-area-info-products labelFor="descricao" textLabel="Descrição do produto" textAreaPlaceholder="Digite a descrição do produto" textAreaValue="{{ valorTextArea }}"></app-text-area-info-products>
+                <app-input-info-products labelFor="Nome" textLabel="Nome do Produto" qtdCaracteres="0/255"
+                    inputPlaceholder="Digite o nome do produto" [(inputValue)]="valorInputNome"
+                    (inputValueChange)="onNomeChange($event)"></app-input-info-products>
+
+                <app-text-area-info-products labelFor="descricao" textLabel="Descrição do produto"
+                    textAreaPlaceholder="Digite a descrição do produto" [(textAreaValue)]="valorTextArea"
+                    (textAreaValueChange)="onDescricaoChange($event)"></app-text-area-info-products>
+
                 <div class="lado">
-                    <app-input-info-products labelFor="qtdProdutos" textLabel="Quantidade" inputPlaceholder="Ex: 14" inputValue="{{ quantidadeEstoque }}"></app-input-info-products>
-                    <app-input-info-products labelFor="tamanho" textLabel="Tamanho" inputPlaceholder="Ex: GG" inputValue="{{ tamanhoProduto }}"></app-input-info-products>
-                    <app-input-info-products labelFor="preco" textLabel="Preço" inputPlaceholder="Ex: 69,99" inputValue="{{ precoProduto }}"></app-input-info-products>
+                    <app-input-info-products labelFor="qtdProdutos" textLabel="Quantidade" inputPlaceholder="Ex: 14"
+                        [(inputValue)]="quantidadeEstoque"
+                        (inputValueChange)="onQuantidadeChange($event)"></app-input-info-products>
+
+                    <app-input-info-products labelFor="tamanho" textLabel="Tamanho" inputPlaceholder="Ex: GG"
+                        [(inputValue)]="tamanhoProduto"
+                        (inputValueChange)="onTamanhoChange($event)"></app-input-info-products>
+
+                    <app-input-info-products labelFor="preco" textLabel="Preço" inputPlaceholder="Ex: 69,99"
+                        [(inputValue)]="precoProduto"
+                        (inputValueChange)="onPrecoChange($event)"></app-input-info-products>
                 </div>
+
             </div>
         </div>
 

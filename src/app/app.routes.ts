@@ -16,6 +16,7 @@ import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.componen
 import { NotificationAdminComponent } from './admin/pages/notification-admin/notification-admin.component';
 import { LogOutAdminComponent } from './admin/pages/log-out-admin/log-out-admin.component';
 import { AdminComponent } from './admin/admin.component';
+import { InfoProductComponent } from './admin/components/modals/info-product/info-product.component';
 
 export const routes: Routes = [
     {

@@ -1,8 +1,14 @@
 <div class="input">
-    <div class="lado">
-        <label for="{{ labelFor }}"> {{ textLabel }} <span>*</span> </label>
-        <p>0/255</p>
-    </div>
+  <div class="lado">
+    <label for="{{ labelFor }}"> {{ textLabel }} <span>*</span> </label>
+    <p>0/255</p>
+  </div>
 
-    <textarea name="{{ labelFor }}" id="{{ labelFor }}" placeholder="{{ textAreaPlaceholder }}">{{ textAreaValue }}</textarea>
+  <textarea
+    name="{{ labelFor }}"
+    id="{{ labelFor }}"
+    placeholder="{{ textAreaPlaceholder }}"
+    [value]="textAreaValue"
+    (input)="onInput($event)"
+  ></textarea>
 </div>
