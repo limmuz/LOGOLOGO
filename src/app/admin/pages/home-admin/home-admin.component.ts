@@ -21,6 +21,8 @@ export class HomeAdminComponent implements OnInit {  // implementa OnInit
   modalCadastrarProduto = false
   modalConfirmarCadastro = false
 
+  modalErroCadastro = false
+
   listaProdutos: Produto[] = [];
 
   produtoId?: number
@@ -82,8 +84,27 @@ export class HomeAdminComponent implements OnInit {  // implementa OnInit
     window.location.reload()
   }
 
+  abrirModalErroCadastro() {
+    this.modalErroCadastro = true
+  }
+
+  fecharModalErroCadastro() {
+    this.modalErroCadastro = false
+  }
+
   submeter() {
+    if (
+      !this.produto.nome?.trim() ||
+      !this.produto.descricao?.trim() ||
+      !this.produto.quantidade?.toString().trim() ||
+      !this.produto.tamanho?.trim() ||
+      !this.produto.preco?.toString().trim() // || !this.produto.imagem?.trim()
+    ) {
+      this.modalErroCadastro = true
+      return; 
+    }
     this.service.incluir(this.produto).subscribe(() => {
+      this.modalConfirmarCadastro = true
     })
   }
 }

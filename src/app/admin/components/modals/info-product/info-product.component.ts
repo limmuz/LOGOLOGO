@@ -28,6 +28,7 @@ export class InfoProductComponent {
   @Output() closed = new EventEmitter<void>();
 
   @Input() fundo: string = "";
+  @Input() titulo: string = "";
   @Input() produtoImagem: string = "";
 
   @Input() valorInputNome: string = "";

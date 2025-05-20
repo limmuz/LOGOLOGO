@@ -13,12 +13,19 @@ import { Router } from '@angular/router';
   styleUrl: './table.component.css'
 })
 export class TableComponent implements OnInit {
-  
+
   listaProdutos: Produto[] = [];
 
-  produtoSelecionado: Produto | null = null;
+  produtoSelecionado: Produto = {
+    nome: '',
+    descricao: '',
+    imagem: '',
+    quantidade: '',
+    tamanho: '',
+    preco: ''
+  };
 
-  constructor(private service: ProdutoService, private router: Router) {}
+  constructor(private service: ProdutoService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.listar().subscribe((produtos) => {
@@ -48,10 +55,11 @@ export class TableComponent implements OnInit {
     this.modalInformacoesAberto = false
   }
 
-  abrirAlterarProduto() {
+  abrirAlterarProduto(produto: Produto) {
+    this.produtoSelecionado = { ...produto }
     this.modalAlterarProdutoAberto = true
   }
-  
+
   fecharAlterarProduto() {
     this.modalAlterarProdutoAberto = false
   }
@@ -59,16 +67,30 @@ export class TableComponent implements OnInit {
   abrirConfirmarAlteracaoProduto() {
     this.modalConfirmarAlteracaoAberto = true
   }
-  
+
   fecharConfirmarAlteracaoProduto() {
     this.modalConfirmarAlteracaoAberto = false
   }
 
   excluir(id: number) {
-    if(id) {
+    if (id) {
       this.service.excluir(id).subscribe(() => {
         window.location.reload()
       })
     }
   }
+
+  confirmarAlteracaoProduto() {
+    if (this.produtoSelecionado && this.produtoSelecionado.id) {
+      this.service.editar(this.produtoSelecionado).subscribe(() => {
+        this.fecharAlterarProduto();
+
+        // Recarrega só os produtos (sem dar reload na página)
+        this.service.listar().subscribe(produtos => {
+          this.listaProdutos = produtos;
+        });
+      });
+    }
+  }
+
 }
