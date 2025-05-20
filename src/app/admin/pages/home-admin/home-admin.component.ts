@@ -80,8 +80,9 @@ export class HomeAdminComponent implements OnInit {  // implementa OnInit
   }
 
   fecharModalConfirmarCadastro() {
-    this.modalConfirmarCadastro = false
-    window.location.reload()
+    this.modalConfirmarCadastro = false;
+    this.carregarProdutos();            // atualiza a tabela
+    this.fecharModalCadastrarProduto(); // fecha o modal de cadastro
   }
 
   abrirModalErroCadastro() {
@@ -101,7 +102,7 @@ export class HomeAdminComponent implements OnInit {  // implementa OnInit
       !this.produto.preco?.toString().trim() // || !this.produto.imagem?.trim()
     ) {
       this.modalErroCadastro = true
-      return; 
+      return;
     }
     this.service.incluir(this.produto).subscribe(() => {
       this.modalConfirmarCadastro = true

@@ -48,9 +48,9 @@
 
 <app-info-product fundo="fundo-escuro" [somenteLeitura]="true" [isOpen]="modalInformacoesAberto"
     (closed)="fecharModalInformacoes()" titulo="Informações do Produto"
-    [produtoImagem]="produtoSelecionado?.imagem ?? ''" [valorInputNome]="produtoSelecionado?.nome ?? ''"
-    [valorTextArea]="produtoSelecionado?.descricao ?? ''" [quantidadeEstoque]="produtoSelecionado?.quantidade ?? ''"
-    [tamanhoProduto]="produtoSelecionado?.tamanho ?? ''" [precoProduto]="produtoSelecionado?.preco ?? ''">
+    [produtoImagem]="produtoSelecionado.imagem" [valorInputNome]="produtoSelecionado.nome"
+    [valorTextArea]="produtoSelecionado.descricao" [quantidadeEstoque]="produtoSelecionado.quantidade"
+    [tamanhoProduto]="produtoSelecionado.tamanho" [precoProduto]="produtoSelecionado.preco">
 
     <div class="espaco">
         <app-button-action (click)="fecharModalInformacoes()" cor="lilas">
@@ -70,6 +70,18 @@
     </div>
 </app-confirm-action>
 
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroAlteracao"
+    (closed)="fecharModalErroAlteracao()" title="Erro ao alterar">
+    <p>Preencha todos os campos antes de cadastrar o produto.</p>
+
+    <div class="espaco">
+        <app-button-action cor="vermelho" (click)="fecharModalErroAlteracao()">
+            fechar
+        </app-button-action>
+    </div>
+</app-confirm-action>
+
+
 <app-info-product fundo="fundo-escuro" [isOpen]="modalAlterarProdutoAberto" (closed)="fecharAlterarProduto()"
     title="Alterar Produto" [(valorInputNome)]="produtoSelecionado.nome"
     [(valorTextArea)]="produtoSelecionado.descricao" [(quantidadeEstoque)]="produtoSelecionado.quantidade"
@@ -79,7 +91,7 @@
         <app-button-action (click)="fecharAlterarProduto()" cor="lilas">
             Fechar
         </app-button-action>
-        <app-button-action (click)="abrirConfirmarAlteracaoProduto()" cor="laranja">
+        <app-button-action (click)="confirmarAlteracaoProduto()" cor="laranja">
             Alterar
         </app-button-action>
     </div>
