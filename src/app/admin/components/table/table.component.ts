@@ -16,6 +16,8 @@ export class TableComponent implements OnInit {
   
   listaProdutos: Produto[] = [];
 
+  produtoSelecionado: Produto | null = null;
+
   constructor(private service: ProdutoService, private router: Router) {}
 
   ngOnInit(): void {
@@ -37,7 +39,8 @@ export class TableComponent implements OnInit {
     this.modalExclusaoAberto = false
   }
 
-  abrirModalInformacoes() {
+  abrirModalInformacoes(produto: Produto) {
+    this.produtoSelecionado = produto;
     this.modalInformacoesAberto = true
   }
 
