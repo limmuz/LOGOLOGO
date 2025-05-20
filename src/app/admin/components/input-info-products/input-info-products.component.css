@@ -7,13 +7,14 @@ label {
     text-transform: capitalize;
 }
 
-
 span {
     color: red;
 }
 
 p {
     color: var(--cinza-claro);
+
+    margin-bottom: 0;
 }
 
 input {

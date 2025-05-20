@@ -13,6 +13,8 @@ span {
 
 p {
     color: var(--cinza-claro);
+
+    margin-bottom: 0;
 }
 
 textarea {

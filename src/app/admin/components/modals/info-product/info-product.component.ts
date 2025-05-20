@@ -29,10 +29,12 @@ export class InfoProductComponent {
 
   @Input() fundo: string = "";
   @Input() titulo: string = "";
-  @Input() produtoImagem: string = "";
 
   @Input() valorInputNome: string = "";
   @Output() valorInputNomeChange = new EventEmitter<string>();
+
+  @Input() valorInputImagem: string = "";
+  @Output() valorInputImagemChange = new EventEmitter<string>();
 
   @Input() valorTextArea: string = "";
   @Output() valorTextAreaChange = new EventEmitter<string>();
@@ -53,6 +55,10 @@ export class InfoProductComponent {
 
   onNomeChange(value: string) {
     this.valorInputNomeChange.emit(value);
+  }
+
+  onImagemChange(value: string) {
+    this.valorInputImagemChange.emit(value);
   }
 
   onDescricaoChange(value: string) {

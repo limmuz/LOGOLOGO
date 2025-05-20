@@ -37,10 +37,10 @@ export class TableComponent implements OnInit {
   modalInformacoesAberto = false;
   modalAlterarProdutoAberto = false
   modalConfirmarAlteracaoAberto = false
-
   modalErroAlteracao = false
 
-  abrirModalExclusao() {
+  abrirModalExclusao(produto: Produto) {
+    this.produtoSelecionado = produto;
     this.modalExclusaoAberto = true
   }
 
@@ -90,14 +90,14 @@ export class TableComponent implements OnInit {
     }
   }
 
-
   confirmarAlteracaoProduto() {
     if (
       !this.produtoSelecionado.nome?.trim() ||
       !this.produtoSelecionado.descricao?.trim() ||
       !this.produtoSelecionado.quantidade?.toString().trim() ||
       !this.produtoSelecionado.tamanho?.trim() ||
-      !this.produtoSelecionado.preco?.toString().trim()
+      !this.produtoSelecionado.preco?.toString().trim() ||
+      !this.produtoSelecionado.imagem?.toString().trim()
     ) {
       this.modalErroAlteracao = true;
       return;

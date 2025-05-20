@@ -36,6 +36,14 @@ tbody th {
     font-weight: normal;
 }
 
+.table-image {
+    width: 2rem;
+    height: 2rem;
+
+    border: 1px solid var(--cinza);
+    border-radius: 50%;
+}
+
 tbody tr th i {
     cursor: pointer;
 

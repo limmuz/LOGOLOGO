@@ -99,7 +99,8 @@ export class HomeAdminComponent implements OnInit {  // implementa OnInit
       !this.produto.descricao?.trim() ||
       !this.produto.quantidade?.toString().trim() ||
       !this.produto.tamanho?.trim() ||
-      !this.produto.preco?.toString().trim() // || !this.produto.imagem?.trim()
+      !this.produto.preco?.toString().trim() || 
+      !this.produto.imagem?.trim()
     ) {
       this.modalErroCadastro = true
       return;
