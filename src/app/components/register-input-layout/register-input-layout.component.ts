@@ -11,3 +11,4 @@ export class RegisterInputLayoutComponent {
   @Input() label: string = ""
   @Input() email: string = ""
 }
+
