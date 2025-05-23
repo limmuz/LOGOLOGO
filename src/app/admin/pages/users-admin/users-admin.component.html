@@ -1,0 +1,71 @@
+<app-admin-layout>
+    <main class="users">
+        <div class="header">
+            <div class="input">
+                <input type="text" name="pesquisar" id="pesquisar" placeholder="Digite o nome de um produto...">
+                <button class="bi bi-search"></button>
+            </div>
+
+            <i class="bi bi-bell" routerLink="/notificacoes"></i>
+
+            <div class="profile">
+                <i class="bi bi-person-circle"></i>
+
+                <div class="text">
+                    <p>Nicole</p>
+                    <p>nicole.lins&#64;logologo.com</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cabecalho-tabela">
+            <h2>Usuários</h2>
+
+            <div class="controller">
+                <button (click)="abrirModalCadastrarUsuarioAberto()">
+                    <i class="bi bi-plus-circle"></i>
+                    Adicionar novo usuário
+                </button>
+            </div>
+        </div>
+
+        <app-table-users></app-table-users>
+    </main>
+
+</app-admin-layout>
+
+<app-info-users fundo="fundo-escuro" titulo="Cadastrar Usuário" [isOpen]="modalCadastrarUsuarioAberto" (closed)="fecharModalCadastrarUsuario()">
+    <div class="espaco">
+        <app-button-action (click)="fecharModalCadastrarUsuario()" cor="lilas">
+            Fechar
+        </app-button-action>
+
+        <app-button-action (click)="submeter()" cor="laranja">
+            Cadastrar
+        </app-button-action>
+    </div>
+</app-info-users>
+
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarCadastroUsuarioAberto" (closed)="fecharModalConfirmarCadastroUsuario()"
+    title="Produto cadastrado">
+    <p>Produto cadastrado com sucesso!</p>
+
+    <div class="espaco">
+        <app-button-action cor="lilas" (click)="fecharModalConfirmarCadastroUsuario(); fecharModalCadastrarUsuario()">
+            Fechar
+        </app-button-action>
+    </div>
+</app-confirm-action>
+
+<!-- integrar modal de erro posteriormente -->
+
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroUsuarioAberto"
+    (closed)="fecharModalErroUsuario()" title="Erro ao alterar">
+    <p>Preencha todos os campos antes de cadastrar um usuário.</p>
+
+    <div class="espaco">
+        <app-button-action cor="vermelho" (click)="fecharModalErroUsuario()">
+            fechar
+        </app-button-action>
+    </div>
+</app-confirm-action>

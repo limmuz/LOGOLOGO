@@ -1,0 +1,54 @@
+.tabela {
+    width: 100%;
+    overflow-x: auto;
+    max-height: 67vh;
+    overflow-y: auto;
+
+    border-radius: 1rem;
+
+    background-color: var(--branco);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead {
+    position: sticky;
+    top: 0;
+
+    color: var(--branco);
+
+    background-color: var(--cinza);
+}
+
+thead th {
+    border-bottom: 1px solid var(--cinza);
+    padding: 1rem 0;
+    text-align: center;
+}
+
+tbody th {
+    border-bottom: 1px solid var(--cinza);
+    padding: 8px;
+    text-align: center;
+    font-weight: normal;
+}
+
+tbody tr th i {
+    cursor: pointer;
+
+    font-size: 1.5rem;
+
+    transition: .5s;
+}
+
+tbody tr th i:hover {
+    color: var(--laranja);
+}
+
+.espaco {
+    display: flex;
+    gap: 1rem;
+}

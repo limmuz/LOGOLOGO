@@ -17,6 +17,7 @@ import { NotificationAdminComponent } from './admin/pages/notification-admin/not
 import { LogOutAdminComponent } from './admin/pages/log-out-admin/log-out-admin.component';
 import { AdminComponent } from './admin/admin.component';
 import { InfoProductComponent } from './admin/components/modals/info-product/info-product.component';
+import { UsersAdminComponent } from './admin/pages/users-admin/users-admin.component';
 
 export const routes: Routes = [
     {
@@ -88,6 +89,11 @@ export const routes: Routes = [
         path: "logout",
         component: LogOutAdminComponent,
         title: "LOGOLOGO - Log Out"
+    },
+    {
+        path: "users",
+        component: UsersAdminComponent,
+        title: "LOGOLOGO - Usuários"
     },
     {
         path: "404",

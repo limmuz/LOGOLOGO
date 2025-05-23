@@ -1,0 +1,33 @@
+.modal-overlay {
+    z-index: 1000;
+}
+
+.modal-content {
+    width: 70vw;
+    height: 85vh;
+}
+
+.modal-main {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    width: 80%;
+}
+
+.lado {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.lado .inputnome {
+    width: 50%;
+}
