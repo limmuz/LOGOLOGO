@@ -4,24 +4,10 @@
     <h1>Novidades</h1>
 
     <section class="novidades">
-        <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa1" alt="Camisa 1" preco="250,99"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa2" alt="Camisa 2" preco="145,00"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/shorts1" alt="Shorts 1" preco="80,90"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa1" alt="Camisa 1" preco="250,99"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa2" alt="Camisa 2" preco="145,00"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/shorts1" alt="Shorts 1" preco="80,90"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa1" alt="Camisa 1" preco="250,99"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa2" alt="Camisa 2" preco="145,00"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/shorts1" alt="Shorts 1" preco="80,90"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa1" alt="Camisa 1" preco="250,99"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa2" alt="Camisa 2" preco="145,00"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/shorts1" alt="Shorts 1" preco="80,90"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa1" alt="Camisa 1" preco="250,99"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa2" alt="Camisa 2" preco="145,00"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/shorts1" alt="Shorts 1" preco="80,90"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa1" alt="Camisa 1" preco="250,99"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/camisa2" alt="Camisa 2" preco="145,00"></app-product-box>
-            <app-product-box routerLink="/em-contrucao" caminhoImagem="assets/images/shorts1" alt="Shorts 1" preco="80,90"></app-product-box>
+        @for (produto of listaProdutos; track produto) {
+        <app-product-box routerLink="/em-contrucao" caminhoImagem="{{ produto.imagem }}" alt="imagem do produto {{ produto.nome }}"
+            preco="{{ produto.preco }}"></app-product-box>
+        }
     </section>
 </main>
 

@@ -1,5 +1,5 @@
-import { RouterModule } from '@angular/router';
-import { Component } from '@angular/core';
+import { Router, RouterModule } from '@angular/router';
+import { Component, Input } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { ListProductsComponent } from "../../components/list-products/list-products.component";
 import { FooterComponent } from "../../components/footer/footer.component";
@@ -7,6 +7,8 @@ import { ProductBoxComponent } from "../../components/product-box/product-box.co
 import { WhiteRoundButtonComponent } from "../../components/buttons/white-round-button/white-round-button.component";
 import { BlackSquareButtonComponent } from "../../components/buttons/black-square-button/black-square-button.component";
 import { CaroselComponent } from "../../components/carosel/carosel.component";
+import { Produto } from '../../core/types/types';
+import { ProdutoService } from '../../core/services/produto.service';
 
 @Component({
   selector: 'app-home',
@@ -15,5 +17,22 @@ import { CaroselComponent } from "../../components/carosel/carosel.component";
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
+  @Input() listaProdutos: Produto[] = [];
 
+  produtoSelecionado: Produto = {
+    nome: '',
+    descricao: '',
+    imagem: '',
+    quantidade: '',
+    tamanho: '',
+    preco: ''
+  };
+
+  constructor(private service: ProdutoService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.service.listar().subscribe((produtos) => {
+      this.listaProdutos = produtos;
+    })
+  }
 }
