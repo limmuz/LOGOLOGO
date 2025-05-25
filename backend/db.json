@@ -151,20 +151,6 @@
       "sobrenome": "Avarelo",
       "email": "viniciusavarelopacheco@gmail.com",
       "senha": "12345678910"
-    },
-    {
-      "id": "4fcf",
-      "nome": "Alana",
-      "sobrenome": "Pereira Viana",
-      "email": "paulinhapv22@gmail.com",
-      "senha": "4587"
-    },
-    {
-      "id": "4a1f",
-      "nome": "Ana Paula",
-      "sobrenome": "Pereira Viana",
-      "email": "ana.pereira.viana@hotmail.com",
-      "senha": "655"
     }
   ]
 }
