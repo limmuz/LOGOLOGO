@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-register-input-layout',
@@ -9,7 +9,15 @@ import { Component, Input } from '@angular/core';
 export class RegisterInputLayoutComponent {
   @Input() tema: string = ""
   @Input() label: string = ""
-  @Input() email: string = ""
+  @Input() placeholder: string = ""
   @Input() type: string = ""
+
+  @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
+
+  onInput(event: any) {
+    this.value = event.target.value;
+    this.valueChange.emit(this.value);
+  }
 }
 

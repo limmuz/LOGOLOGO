@@ -1,4 +1,4 @@
 <div class="register-input {{ tema }}">
-    <label for="email"> {{ label }} </label>
-    <input type="{{ type }}" name="{{ type }}" id="{{ type }}" placeholder="{{ email }}">
+    <label [for]="type"> {{ label }} </label>
+    <input [type]="type" [name]="type" [id]="type" [placeholder]="placeholder" [value]="value" (input)="onInput($event)">
 </div>

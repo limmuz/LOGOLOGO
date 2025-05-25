@@ -5,7 +5,7 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
-  imports: [AdminLayoutComponent, HomeAdminComponent, RouterOutlet],
+  imports: [AdminLayoutComponent, RouterOutlet],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })

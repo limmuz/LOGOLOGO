@@ -4,15 +4,17 @@
             <h2>Bem vindo de volta!</h2>
             <p>Por favor, insira as informações abaixo</p>
 
-            <app-register-input-layout id="emailInput" tema="tema-claro" label="e-mail"
-                email="Digite seu e-mail"></app-register-input-layout>
-            <app-password-input-layout id="passwordInput" tema="tema-claro" label="senha"
-                password="Digite sua senha"></app-password-input-layout>
+            <app-register-input-layout tema="tema-claro" label="e-mail" placeholder="Digite seu e-mail" type="email"
+                [(value)]="email">
+            </app-register-input-layout>
+
+            <app-password-input-layout tema="tema-claro" label="senha" placeholder="Digite sua senha"
+                [(password)]="senha">
+            </app-password-input-layout>
+
 
             <div class="btns">
-                <app-orange-square-button (click)="fazerLogin()" 
-                    tema="tema-claro"
-                    orangeSquareButton="entrar">
+                <app-orange-square-button (click)="fazerLogin()" tema="tema-claro" orangeSquareButton="entrar">
                 </app-orange-square-button>
                 <app-orange-square-button routerLink="/" tema="tema-claro"
                     orangeSquareButton="Voltar"></app-orange-square-button>
