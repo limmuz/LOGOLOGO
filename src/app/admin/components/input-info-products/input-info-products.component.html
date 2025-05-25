@@ -1,8 +1,16 @@
 <div class="input">
-    <div class="lado">
-        <label for="{{ labelFor }}"> {{ textLabel }} <span>*</span> </label>
-        <p>{{ qtdCaracteres }}</p>
-    </div>
+  <div class="lado">
+    <label for="{{ labelFor }}"> {{ textLabel }} <span>*</span> </label>
+    <p>{{ qtdCaracteres }}</p>
+  </div>
 
-    <input type="text" name="{{ labelFor }}" id="{{ labelFor }}" placeholder="{{ inputPlaceholder }}" value="{{ inputValue }}">
+  <input
+    type="text"
+    name="{{ labelFor }}"
+    id="{{ labelFor }}"
+    [disabled]="disabled"
+    placeholder="{{ inputPlaceholder }}"
+    [value]="inputValue"
+    (input)="onInput($event)"
+  />
 </div>

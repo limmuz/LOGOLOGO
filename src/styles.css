@@ -12,6 +12,7 @@
     --branco-fumaca: #EEEEEE;
     --amarelo: #FFC633;
     --lilas: #887BB1;
+    --vermelho: #FF2C2C;
 
     --notifications-azul: #B2E7F5;
     --notifications-amarelo: #FAE7C7;
@@ -66,13 +67,10 @@ img {
 
 ::-webkit-scrollbar-track {
   background: var(--branco);
-  border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: var(--laranja);
-  border-radius: 20px;
-  border: 3px solid var(--branco);
   transition: background-color 0.3s;
 }
 

@@ -12,10 +12,12 @@ import { CalcadosComponent } from './pages/calcados/calcados.component';
 import { AcessoriosComponent } from './pages/acessorios/acessorios.component';
 import { UnderConstructionsComponent } from './components/under-constructions/under-constructions.component';
 
-import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.component';
 import { NotificationAdminComponent } from './admin/pages/notification-admin/notification-admin.component';
 import { LogOutAdminComponent } from './admin/pages/log-out-admin/log-out-admin.component';
 import { AdminComponent } from './admin/admin.component';
+import { UsersAdminComponent } from './admin/pages/users-admin/users-admin.component';
+import { AdminGuard } from './guards/admin.guard';
+import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.component';
 
 export const routes: Routes = [
     {
@@ -92,7 +94,7 @@ export const routes: Routes = [
         path: "404",
         component: ErrorPageComponent,
         title: "LOGOLOGO - Pagina não encontrada"
-    }, 
+    },
     {
         path: "**",
         redirectTo: "/404"

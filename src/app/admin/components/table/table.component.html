@@ -14,42 +14,50 @@
         </thead>
 
         <tbody>
-            @for (produto of listaProdutos; track produto) {
-            <tr>
+            <tr *ngIf="produtosFiltrados.length === 0">
+                <td colspan="10" class="msg-nenhum-produto">
+                    Nenhum produto encontrado para <span>"{{ textoBusca }}"</span> 
+                </td>
+            </tr>
+
+            <tr *ngFor="let produto of produtosFiltrados; trackBy: trackByProduto">
                 <th> {{produto.id}} </th>
-                <th><i class="bi bi-image"></i> {{ produto.imagem }} </th>
-                <th> {{ produto.nome }} </th>
+                <th><img class="table-image" [src]="produto.imagem" [title]="'Imagem do produto ' + produto.nome"
+                        [alt]="'Imagem do produto ' + produto.nome"></th>
+                <th class="nome"> {{ produto.nome }} </th>
                 <th class="descricao"> {{ produto.descricao }} </th>
                 <th> {{ produto.quantidade }} </th>
                 <th> {{ produto.tamanho }} </th>
                 <th>R$ {{ produto.preco }}</th>
-                <th (click)="abrirModalInformacoes()"><i class="bi bi-info-circle"></i></th>
-                <th (click)="abrirAlterarProduto()"><i class="bi bi-pencil-square"></i></th>
-                <th (click)="abrirModalExclusao()"><i class="bi bi-trash3"></i></th>
+                <th><i (click)="abrirModalInformacoes(produto)" class="bi bi-info-circle"></i></th>
+                <th><i (click)="abrirAlterarProduto(produto)" class="bi bi-pencil-square"></i></th>
+                <th><i (click)="abrirModalExclusao(produto)" class="bi bi-trash3"></i></th>
             </tr>
-            }
         </tbody>
+
+        <app-confirm-action [isOpen]="modalExclusaoAberto" (closed)="fecharModalExclusao()" fundo="fundo-escuro"
+            title="Excluir produto">
+            <p>Tem certeza que deseja excluir este produto?</p>
+
+            <div class="espaco">
+                <app-button-action cor="lilas" (click)="fecharModalExclusao()">
+                    Cancelar
+                </app-button-action>
+                <app-button-action cor="laranja" (click)="fecharModalExclusao(); excluir(produtoSelecionado.id!)">
+                    Excluir
+                </app-button-action>
+            </div>
+        </app-confirm-action>
+
     </table>
 </div>
 
-<app-confirm-action [isOpen]="modalExclusaoAberto" (closed)="fecharModalExclusao()" title="Excluir produto">
-    <p>Tem certeza que deseja excluir este produto?</p>
+<app-info-product fundo="fundo-escuro" [somenteLeitura]="true" [isOpen]="modalInformacoesAberto"
+    (closed)="fecharModalInformacoes()" titulo="Informações do Produto" [valorInputImagem]="produtoSelecionado.imagem"
+    [valorInputNome]="produtoSelecionado.nome" [valorTextArea]="produtoSelecionado.descricao"
+    [quantidadeEstoque]="produtoSelecionado.quantidade" [tamanhoProduto]="produtoSelecionado.tamanho"
+    [precoProduto]="produtoSelecionado.preco">
 
-    <div class="espaco">
-        <app-button-action cor="lilas" (click)="fecharModalExclusao()">
-            Cancelar
-        </app-button-action>
-        <app-button-action cor="laranja" (click)="fecharModalExclusao()">
-            Excluir
-        </app-button-action>
-    </div>
-</app-confirm-action>
-
-<app-info-product [isOpen]="modalInformacoesAberto" (closed)="fecharModalInformacoes()"  title="Informações do Produto"
-    produtoImagem="https://acdn-us.mitiendanube.com/stores/002/037/298/products/r8tpgs9-69611169236149a31516521949612638-1024-1024.jpg"
-    valorInputNome="Conjunto"
-    valorTextArea="Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?"
-    quantidadeEstoque="125447" tamanhoProduto="EXGG" precoProduto="125,36">
     <div class="espaco">
         <app-button-action (click)="fecharModalInformacoes()" cor="lilas">
             Fechar
@@ -57,26 +65,40 @@
     </div>
 </app-info-product>
 
-<app-confirm-action [isOpen]="modalConfirmarAlteracaoAberto" (closed)="fecharConfirmarAlteracaoProduto()" title="Produto alterado">
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarAlteracaoAberto"
+    (closed)="fecharConfirmarAlteracaoProduto()" title="Produto alterado">
     <p>Produto alterado com sucesso!</p>
 
     <div class="espaco">
-        <app-button-action cor="lilas" (click)="fecharConfirmarAlteracaoProduto()">
+        <app-button-action cor="lilas"
+            (click)="fecharConfirmarAlteracaoProduto(); fecharAlterarProduto(); confirmarAlteracaoProduto()">
             fechar
         </app-button-action>
     </div>
 </app-confirm-action>
 
-<app-info-product [isOpen]="modalAlterarProdutoAberto" (closed)="fecharAlterarProduto()"  title="Alterar Produto"
-    produtoImagem="https://acdn-us.mitiendanube.com/stores/002/037/298/products/r8tpgs9-69611169236149a31516521949612638-1024-1024.jpg"
-    valorInputNome="Conjunto"
-    valorTextArea="Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?"
-    quantidadeEstoque="125447" tamanhoProduto="EXGG" precoProduto="125,36">
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroAlteracao" (closed)="fecharModalErroAlteracao()"
+    title="Erro ao alterar">
+    <p>Preencha todos os campos antes de cadastrar o produto.</p>
+
+    <div class="espaco">
+        <app-button-action cor="vermelho" (click)="fecharModalErroAlteracao()">
+            fechar
+        </app-button-action>
+    </div>
+</app-confirm-action>
+
+
+<app-info-product fundo="fundo-escuro" [isOpen]="modalAlterarProdutoAberto" (closed)="fecharAlterarProduto()"
+    titulo="Alterar Produto" [(valorInputNome)]="produtoSelecionado.nome"
+    [(valorTextArea)]="produtoSelecionado.descricao" [(quantidadeEstoque)]="produtoSelecionado.quantidade"
+    [(tamanhoProduto)]="produtoSelecionado.tamanho" [(precoProduto)]="produtoSelecionado.preco"
+    [(valorInputImagem)]="produtoSelecionado.imagem">
     <div class="espaco">
         <app-button-action (click)="fecharAlterarProduto()" cor="lilas">
             Fechar
         </app-button-action>
-        <app-button-action (click)="abrirConfirmarAlteracaoProduto()" cor="laranja">
+        <app-button-action (click)="confirmarAlteracaoProduto()" cor="laranja">
             Alterar
         </app-button-action>
     </div>

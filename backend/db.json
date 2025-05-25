@@ -1,22 +1,164 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "imagem": "",
-            "nome": "Camiseta",
-            "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
-            "quantidade": 123,
-            "tamanho": "GG",
-            "preco": 74.90
-        },
-        {
-            "id": 2,
-            "imagem": "",
-            "nome": "Bermuda",
-            "descricao": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam possimus ipsam beatae magnam! Consectetur dolor, fugit officia deserunt, dolorum exercitationem dolorem impedit obcaecati nihil sapiente velit, porro accusantium. Rem?",
-            "quantidade": 45,
-            "tamanho": "GG",
-            "preco": 154.99
-        }
-    ]
+  "produtos": [
+    {
+      "id": "9929",
+      "imagem": "https://i.pinimg.com/736x/45/85/76/4585762374b5b51dccf114b148403355.jpg",
+      "nome": "Camisa Xadrez Lenhador",
+      "descricao": "Clássica camisa xadrez estilo lenhador, perfeita para um visual casual e despojado.",
+      "quantidade": "158",
+      "tamanho": "G",
+      "preco": "74,99"
+    },
+    {
+      "id": "81da",
+      "imagem": "https://fashioniris.com.br/cdn/shop/files/Vestido-Feminino-Longo-Floral-De-Alca-Fashion-Iris-1.jpg?v=1732673397",
+      "nome": "Vestido Feminino Longo Floral de Alça",
+      "descricao": "Elegante vestido feminino longo com estampa floral e alças, ideal para ocasiões especiais ou um look de verão.",
+      "quantidade": "26",
+      "tamanho": "M",
+      "preco": "204,60"
+    },
+    {
+      "id": "66e1",
+      "imagem": "https://imgnike-a.akamaihd.net/1920x1920/011137ID.jpg",
+      "nome": "Nike Air Force 1 07 Masculino",
+      "descricao": "Icônico tênis Nike Air Force 1 '07 masculino, um clássico do streetwear que combina estilo e conforto.",
+      "quantidade": "68",
+      "tamanho": "42",
+      "preco": "759,99"
+    },
+    {
+      "id": "616a",
+      "imagem": "https://img.ltwebstatic.com/gspCenter/goodsImage/2023/4/6/4438087412_1032507/C1FA1D8931D5794003A2AB296927E639_thumbnail_720x.jpg",
+      "nome": "Calça Feminina Tactel com Elástico e Bolsos Streetwear",
+      "descricao": "Moderna calça feminina em tactel, com elástico na cintura e bolsos práticos, perfeita para um look streetwear confortável.",
+      "quantidade": "67",
+      "tamanho": "M",
+      "preco": "45,90"
+    },
+    {
+      "id": "29bd",
+      "imagem": "https://down-br.img.susercontent.com/file/sg-11134201-22110-qijbv64zc7jvf9",
+      "nome": "Cropped Manga Longa Shein Transpassado",
+      "descricao": "Estiloso cropped de manga longa com detalhe transpassado, ideal para compor looks jovens e modernos.",
+      "quantidade": "24",
+      "tamanho": "M",
+      "preco": "53,59"
+    },
+    {
+      "id": "1ad3",
+      "imagem": "https://static.netshoes.com.br/produtos/camisa-sao-paulo-i-2425-sn-torcedor-new-balance-masculina/24/39U-9320-024/39U-9320-024_zoom1.jpg?ts=1706540181",
+      "nome": "Camisa São Paulo 24/25 Torcedor NB",
+      "descricao": "Demonstre sua paixão pelo tricolor com a camisa oficial do São Paulo para a temporada 24/25, modelo torcedor da New Balance.",
+      "quantidade": "68",
+      "tamanho": "G",
+      "preco": "265,99"
+    },
+    {
+      "id": "8e63",
+      "imagem": "https://maisejoias.bwimg.com.br/maisejoias/produtos/colar-feminino-de-elos-folheado-a-ouro-18k-1637605878.7802.jpg",
+      "nome": "Corrente Feminina de Elos Folheada Ouro 18K",
+      "descricao": "Elegante corrente feminina de elos, folheada a ouro 18K, um acessório sofisticado para complementar seu visual.",
+      "quantidade": "18",
+      "tamanho": "M",
+      "preco": "134,91"
+    },
+    {
+      "id": "8eb7",
+      "imagem": "https://img.ltwebstatic.com/images3_pi/2023/01/06/16729695503a8c245256f93798f180e5fd58a98d0d_thumbnail_720x.jpg",
+      "nome": "Camiseta Masculina 2 em 1 Caveira Y2K",
+      "descricao": "Versátil camiseta masculina com design 2 em 1, apresentando estampa de caveira no estilo Y2K, para um look autêntico.",
+      "quantidade": "29",
+      "tamanho": "M",
+      "preco": "97,95"
+    },
+    {
+      "id": "1bf0",
+      "imagem": "https://s.dropdead.com.br/product/2024/10/ivey28-hero-2110193619.jpg",
+      "nome": "Camiseta Classic Vans Off The Wall",
+      "descricao": "Autêntica camiseta Classic Vans 'Off The Wall', um item essencial para os amantes do skate e do estilo urbano.",
+      "quantidade": "63",
+      "tamanho": "G",
+      "preco": "120,49"
+    },
+    {
+      "id": "fbf2",
+      "imagem": "https://shoemix.fbitsstatic.net/img/p/sapatilha-salto-perfil-off-white-feminino-2350-10-77427/304346-1.jpg?w=670&h=670&v=no-change&qs=ignore",
+      "nome": "Sapatilha Feminina Beira Rio",
+      "descricao": "Confortável e versátil sapatilha feminina da Beira Rio, ideal para o dia a dia com um toque de charme.",
+      "quantidade": "12",
+      "tamanho": "38",
+      "preco": "94,49"
+    },
+    {
+      "id": "ed8d",
+      "imagem": "https://cdn.awsli.com.br/2500x2500/1636/1636898/produto/91213990/c9c24bf59a.jpg",
+      "nome": "Blusa Moletom Canguru Feminina Rosa com Capuz",
+      "descricao": "Aconchegante blusa de moletom canguru feminina na cor rosa, com capuz, perfeita para dias mais frios com estilo e conforto.",
+      "quantidade": "12",
+      "tamanho": "M",
+      "preco": "99,49"
+    },
+    {
+      "id": "7902",
+      "imagem": "https://dzg5mdpaq0k37.cloudfront.net/Custom/Content/Products/11/93/11939_calca-masculina-jogger-branca-estilosa-e-confortavel-83466_m3_638646209804874785.webp",
+      "nome": "Calça Masculina Alfaiataria Preta Acetinada",
+      "descricao": "Elegante calça masculina de alfaiataria na cor preta com acabamento acetinado, ideal para ocasiões formais ou um look sofisticado.",
+      "quantidade": "8",
+      "tamanho": "50",
+      "preco": "149,99"
+    }
+  ],
+  "admin": [
+    {
+      "id": "bbe1",
+      "nome": "Ana",
+      "sobrenome": "Paula Pereira Viana",
+      "email": "ana.ppviana@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "a6e7",
+      "nome": "Melvin",
+      "sobrenome": "Expedito Gomes Felix",
+      "email": "melvin.egfelix@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "a2cd",
+      "nome": "Miguel",
+      "sobrenome": "Luiz Lima Nascimento",
+      "email": "miguel.llnascimento@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "2f61",
+      "nome": "Nicole",
+      "sobrenome": "Lins Coelho",
+      "email": "nicole.lcoelho@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "5c85",
+      "nome": "Vinícius",
+      "sobrenome": "Avarelo",
+      "email": "vinicius.apacheco@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "9c90",
+      "nome": "Admin",
+      "sobrenome": "Root",
+      "email": "admin@logologo.com",
+      "senha": "1234"
+    }
+  ],
+  "clients": [
+    {
+      "id": "d362",
+      "nome": "Tayna Araújo Bispo",
+      "email": "tayna.abispo@gmail.com",
+      "senha": "1234"
+    }
+  ]
 }

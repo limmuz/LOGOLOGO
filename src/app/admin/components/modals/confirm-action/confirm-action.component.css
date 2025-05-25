@@ -4,6 +4,8 @@
 
 .modal-content {
     width: 35%;
+
+    text-align: center;
 }
 
 .modal-body {

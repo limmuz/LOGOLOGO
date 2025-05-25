@@ -39,11 +39,13 @@
     height: 3rem;
     width: 3rem;
 
+    font-size: 1.5rem;
+
     transition: .5s;
 }
 
 .input button:hover {
-    background-color: var(--laranja);
+    color: var(--laranja);
 }
 
 i {
@@ -87,7 +89,7 @@ i {
     gap: 3rem;
     justify-content: space-between;
     align-items: center;
-    }
+}
 
 .mostrar {
     display: flex;
@@ -136,3 +138,6 @@ i {
     display: flex;
     gap: 1rem;
 }
+
+
+

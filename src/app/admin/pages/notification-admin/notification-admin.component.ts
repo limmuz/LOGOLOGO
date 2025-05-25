@@ -4,7 +4,7 @@ import { NotificationsComponent } from "../../components/notifications/notificat
 
 @Component({
   selector: 'app-notification-admin',
-  imports: [AdminLayoutComponent, NotificationsComponent],
+  imports: [NotificationsComponent],
   templateUrl: './notification-admin.component.html',
   styleUrl: './notification-admin.component.css'
 })

@@ -6,13 +6,14 @@ import { RouterModule } from '@angular/router';
 import { RegisterInputLayoutComponent } from "../../components/register-input-layout/register-input-layout.component";
 import { PasswordInputLayoutComponent } from "../../components/password-input-layout/password-input-layout.component";
 import { OrangeSquareButtonComponent } from "../../components/buttons/orange-square-button/orange-square-button.component";
+import { LogoComponent } from "../../components/logo/logo.component";
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [
     CommonModule,
-    FormsModule, // ESSENCIAL para ngModel
+    FormsModule,
     RouterModule,
     RegisterInputLayoutComponent,
     PasswordInputLayoutComponent,

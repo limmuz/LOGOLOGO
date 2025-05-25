@@ -3,7 +3,6 @@
     overflow-x: auto;
     max-height: 67vh;
     overflow-y: auto;
-    padding: .5rem;
 
     border-radius: 1rem;
 
@@ -13,6 +12,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
+
 }
 
 thead {
@@ -20,25 +20,15 @@ thead {
     top: 0;
 
     color: var(--branco);
-    
+
     background-color: var(--cinza);
 }
-th.ident {
-    border-top-left-radius: 15px;
-}
 
-
-th.ident {
-    border-top-left-radius: 15px;
-
-th.qfinal{
-    border-top-right-radius: 15px;
-}
 thead th {
     border-bottom: 1px solid var(--cinza);
-    padding: 8px;
+    padding: 1rem 0;
     text-align: center;
-
+    
 }
 
 tbody th {
@@ -46,6 +36,15 @@ tbody th {
     padding: 8px;
     text-align: center;
     font-weight: normal;
+    
+}
+
+.table-image {
+    width: 2rem;
+    height: 2rem;
+
+    border: 1px solid var(--cinza);
+    border-radius: 50%;
 }
 
 tbody tr th i {
@@ -60,7 +59,7 @@ tbody tr th i:hover {
     color: var(--laranja);
 }
 
-.descricao {
+.nome, .descricao {
     text-align: left;
     white-space: nowrap;
     overflow: hidden;
@@ -71,29 +70,21 @@ tbody tr th i:hover {
 .espaco {
     display: flex;
     gap: 1rem;
+    
 }
 
-/* SCROLL BAR 
+.msg-nenhum-produto {
+  text-align: center;
+  color: #b30000;
 
-.tabela::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
+  background-color: #ffe5e5;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
 }
 
-.tabela::-webkit-scrollbar-track {
-    background: var(--branco);
-    border-radius: 20px;
+.msg-nenhum-produto span {
+    font-weight: bold;
 }
 
-.tabela::-webkit-scrollbar-thumb {
-    background-color: var(--laranja);
-    border-radius: 20px;
-    border: 3px solid var(--branco);
-    transition: background-color 0.3s;
-}
 
-.tabela::-webkit-scrollbar-thumb:hover {
-    background-color: var(--laranja);
-}
 
-*/

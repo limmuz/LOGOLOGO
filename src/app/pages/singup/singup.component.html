@@ -1,6 +1,7 @@
 <div class="login-container">
     <div class="left">
         <div class="blur">
+            <app-logo routerLink="/" title="logologo"></app-logo>
         </div>
     </div>
 
@@ -10,28 +11,28 @@
             <p>Por favor, insira as informações abaixo</p>
 
             <div class="inputs">
-                <app-register-input-layout tema="tema-escuro" label="e-mail"
-                    email="Digite seu e-mail"></app-register-input-layout>
-                <app-register-input-layout tema="tema-escuro" label="confirmar e-mail"
-                    email="Digite seu e-mail"></app-register-input-layout>
+                <app-register-input-layout type="text" tema="tema-escuro" label="Nome completo"
+                    placeholder="Digite seu Nome" [(value)]="nome"></app-register-input-layout>
+                <app-register-input-layout type="email" tema="tema-escuro" label="e-mail"
+                    placeholder="Digite seu e-mail" [(value)]="email"></app-register-input-layout>
             </div>
 
             <div class="inputs">
-                <app-password-input-layout tema="tema-escuro" label="senha"
-                    password="Digite sua senha"></app-password-input-layout>
-                <app-password-input-layout tema="tema-escuro" label="confirmar senha"
-                    password="Digite sua senha"></app-password-input-layout>
+                <app-password-input-layout tema="tema-escuro" label="senha" placeholder="Digite sua senha"
+                    [(password)]="senha"></app-password-input-layout>
+
+                <app-password-input-layout tema="tema-escuro" label="confirmar senha" placeholder="Digite sua senha"
+                    [(password)]="confirmarSenha"></app-password-input-layout>
             </div>
 
-
-
             <div class="btns">
-                <app-orange-square-button routerLink="/" tema="tema-escuro" orangeSquareButton="entrar"></app-orange-square-button>
-                <app-orange-square-button routerLink="/" tema="tema-escuro" orangeSquareButton="Voltar"></app-orange-square-button>
+                <app-orange-square-button tema="tema-escuro"
+                    orangeSquareButton="cadastrar" (click)="cadastrar()"></app-orange-square-button>
+                <app-orange-square-button routerLink="/" tema="tema-escuro"
+                    orangeSquareButton="Voltar"></app-orange-square-button>
             </div>
 
             <p class="cadastrar">Já possui uma conta? <span routerLink="/login">Entrar</span></p>
         </div>
-
     </div>
 </div>

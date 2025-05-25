@@ -1,0 +1,37 @@
+<div class="modal-overlay {{ fundo }} " *ngIf="isOpen">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2> {{ titulo }} </h2>
+        </div>
+
+        <div class="modal-main">
+            <div class="inputs">
+                <div class="lado">
+                    <app-input-info-products class="inputnome" labelFor="Nome" textLabel="Nome do usuário" qtdCaracteres="0/255"
+                        inputPlaceholder="Digite o nome do usuário" [disabled]="somenteLeitura"
+                        [(inputValue)]="valorInputNome" (inputValueChange)="onNomeChange($event)">
+                    </app-input-info-products>
+
+                    <app-input-info-products class="inputnome" labelFor="sobrenome" textLabel="Sobrenome do usuário" qtdCaracteres="0/255"
+                        inputPlaceholder="Digite o sobrenome do usuário" [disabled]="somenteLeitura"
+                        [(inputValue)]="valorInputSobrenome" (inputValueChange)="onSobrenomeChange($event)">
+                    </app-input-info-products>
+                </div>
+
+                <app-input-info-products labelFor="email" textLabel="Email do usuário" qtdCaracteres="0/255"
+                    inputPlaceholder="Digite o email do usuário" [disabled]="somenteLeitura"
+                    [(inputValue)]="valorInputEmail" (inputValueChange)="onEmailChange($event)">
+                </app-input-info-products>
+
+                <app-input-info-products labelFor="senha" textLabel="Senha do usuário" qtdCaracteres="0/255"
+                    inputPlaceholder="Digite a senha do usuário" [disabled]="somenteLeitura"
+                    [(inputValue)]="valorInputSenha" (inputValueChange)="onSenhaChange($event)">
+                </app-input-info-products>
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>

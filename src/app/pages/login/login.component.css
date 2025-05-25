@@ -62,7 +62,7 @@ span {
     height: 100%;
     backdrop-filter: blur(2px);
 }
-/* Mensagem de erro */
+
 .mensagem-erro {
     color: #d32f2f;
     background-color: #fde8e8;
