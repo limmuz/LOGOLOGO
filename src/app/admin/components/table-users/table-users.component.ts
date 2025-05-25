@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ConfirmActionComponent } from "../modals/confirm-action/confirm-action.component";
 import { ButtonActionComponent } from "../button-action/button-action.component";
 import { InfoUsersComponent } from "../modals/info-users/info-users.component";
+import { AdminService } from '../../../core/services/admin.service';
+import { admin } from '../../../core/types/admin.types';
 
 @Component({
   selector: 'app-table-users',
@@ -9,7 +11,18 @@ import { InfoUsersComponent } from "../modals/info-users/info-users.component";
   templateUrl: './table-users.component.html',
   styleUrl: './table-users.component.css'
 })
-export class TableUsersComponent {
+
+
+export class TableUsersComponent implements OnInit {
+
+  @Input() listagemAdmin: admin[] = [];
+
+  adminSelecionado: admin = {
+    nome: '',
+    sobrenome: '',
+    email: '',
+    senha: ''
+  };
 
   modalAterarUsuarioAberto = false
   modalConfirmarAlteracaoUsuarioAberto = false
@@ -17,7 +30,17 @@ export class TableUsersComponent {
   modalExclusaoUsuarioAberto = false
   modalErroUsuarioAberto = false
 
-  abrirModalAterarUsuarioAberto() {
+  
+  listarAdmins: admin[] = [];
+  constructor(private service: AdminService) { }
+  ngOnInit(): void {
+    this.service.listar().subscribe((admin) => {
+      this.listarAdmins = admin;
+    });
+  }
+
+  abrirModalAterarUsuarioAberto(admin:admin) {
+    this.adminSelecionado = {...admin}
     this.modalAterarUsuarioAberto = true
   }
 
@@ -33,7 +56,8 @@ export class TableUsersComponent {
     this.modalConfirmarAlteracaoUsuarioAberto = false
   }
 
-  abrirModalInformacoesUsuarioAberto() {
+  abrirModalInformacoesUsuarioAberto(admin:admin) {
+    this.adminSelecionado = admin
     this.modalInformacoesUsuarioAberto = true
   }
 
@@ -56,4 +80,35 @@ export class TableUsersComponent {
   fecharModalErroUsuario() {
     this.modalErroUsuarioAberto = false
   }
+
+  excluir(id: number) {
+    if (id) {
+      this.service.excluir(id).subscribe(() => {
+        this.listagemAdmin = this.listagemAdmin.filter(p => p.id !== id);
+      });
+    }
+  }
+
+  confirmarAlteracaoAdmin() {
+    if (
+      !this.adminSelecionado.nome?.trim() ||
+      !this.adminSelecionado.sobrenome?.trim() ||
+      !this.adminSelecionado.email?.toString().trim() ||
+      !this.adminSelecionado.senha?.trim() 
+    ) {
+      this.modalErroUsuarioAberto = true;
+      return;
+    }
+
+    if (this.adminSelecionado && this.adminSelecionado.id) {
+      this.service.editar(this.adminSelecionado).subscribe(() => {
+        this.fecharModalAterarUsuario();
+
+        this.service.listar().subscribe(admin => {
+          this.listagemAdmin = admin;
+        });
+      });
+    }
+  }
 }
+

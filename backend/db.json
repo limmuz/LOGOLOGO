@@ -36,5 +36,35 @@
       "tamanho": "EXGG",
       "preco": "70,00"
     }
+  ],
+  "admin": [
+    {
+      "id": "1",
+      "nome": "Melvo",
+      "sobrenome": "Silva",
+      "email": "melvino@gmail.com",
+      "senha": "melovo123"
+    },
+    {
+      "id": "2",
+      "nome": "Nicolete",
+      "sobrenome": "Guimaraes",
+      "email": "elincinha@gmail.com",
+      "senha": "elociny123"
+    },
+    {
+      "id": "6ad9",
+      "nome": "Vinícius",
+      "sobrenome": "Avarelo",
+      "email": "avarelovinicius@gmail.com",
+      "senha": "123456789"
+    },
+    {
+      "id": "5c85",
+      "nome": "Vinícius",
+      "sobrenome": "Avarelo",
+      "email": "viniciusavarelopacheco@gmail.com",
+      "senha": "12345678910"
+    }
   ]
 }

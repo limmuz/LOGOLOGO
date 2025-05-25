@@ -34,7 +34,7 @@
 
 </app-admin-layout>
 
-<app-info-users fundo="fundo-escuro" titulo="Cadastrar Usuário" [isOpen]="modalCadastrarUsuarioAberto" (closed)="fecharModalCadastrarUsuario()">
+<app-info-users fundo="fundo-escuro" titulo="Cadastrar Usuário" [isOpen]="modalCadastrarUsuarioAberto" (closed)="fecharModalCadastrarUsuario()" [(valorInputNome)]="admin.nome" [(valorInputSobrenome)]="admin.sobrenome" [(valorInputEmail)]="admin.email" [(valorInputSenha)]="admin.senha">
     <div class="espaco">
         <app-button-action (click)="fecharModalCadastrarUsuario()" cor="lilas">
             Fechar
