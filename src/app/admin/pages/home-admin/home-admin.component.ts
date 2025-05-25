@@ -15,7 +15,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.css'
 })
-export class HomeAdminComponent implements OnInit {
+
 export class HomeAdminComponent implements OnInit {
 
   @Input() nome: string = "";
