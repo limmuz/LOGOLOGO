@@ -73,11 +73,11 @@ export const routes: Routes = [
         component: UnderConstructionsComponent,
         title: "LOGOLOGO - Em contrução"
     },
-    {
-        path: "admin",
-        component: AdminComponent,
-        title: "LOGOLOGO - Admin"
-    },
+    
+         { path: 'admin', component: AdminComponent },
+  {path: 'admin/home-admin', 
+    component: HomeAdminComponent},
+    
     {
         path: "notificacoes",
         component: NotificationAdminComponent,

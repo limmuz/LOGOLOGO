@@ -1,13 +1,41 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, forwardRef } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-password-input-layout',
-  imports: [],
   templateUrl: './password-input-layout.component.html',
-  styleUrl: './password-input-layout.component.css'
+  styleUrls: ['./password-input-layout.component.css'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: forwardRef(() => PasswordInputLayoutComponent),
+    multi: true
+  }]
 })
-export class PasswordInputLayoutComponent {
-  @Input() tema: string = ""
-  @Input() label: string = ""
-  @Input() password: string = ""
+export class PasswordInputLayoutComponent implements ControlValueAccessor {
+  @Input() tema: string = "";
+  @Input() label: string = "";
+  @Input() placeholder: string = "";
+  
+  value: string = "";
+  onChange: any = () => {};
+  onTouched: any = () => {};
+
+  writeValue(value: string): void {
+    this.value = value;
+  }
+
+  registerOnChange(fn: any): void {
+    this.onChange = fn;
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
+  }
+
+  updateValue(event: Event): void {
+    const value = (event.target as HTMLInputElement).value;
+    this.value = value;
+    this.onChange(value);
+    this.onTouched();
+  }
 }
