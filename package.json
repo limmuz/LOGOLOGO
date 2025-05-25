@@ -1,12 +1,17 @@
 {
-  "name": "logologo",
+   "name": "logologo",
   "version": "0.0.0",
   "scripts": {
+    "dev": "concurrently \"npx json-server --watch backend/db.json\" \"npm run start\"",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "testar": "ng test --watch=false --browsers=ChromeHeadless",
+    "backend": "npx json-server --watch backend/db.json",
+    "zipar": "powershell Compress-Archive -Path * -DestinationPath projeto.zip -Force",
+    "check-e-zipa": "npm run testar && npm run zipar"
   },
   "private": true,
   "dependencies": {

@@ -6,7 +6,7 @@ import { FooterComponent } from "../../components/footer/footer.component";
 import { ProductBoxComponent } from "../../components/product-box/product-box.component";
 import { WhiteRoundButtonComponent } from "../../components/buttons/white-round-button/white-round-button.component";
 import { BlackSquareButtonComponent } from "../../components/buttons/black-square-button/black-square-button.component";
-import { CaroselComponent } from "../../components/carosel/carosel.component";
+import { CaroselComponent } from "../../components/carrosel/carosel.component";
 import { Produto } from '../../core/types/types';
 import { ProdutoService } from '../../core/services/produto.service';
 
