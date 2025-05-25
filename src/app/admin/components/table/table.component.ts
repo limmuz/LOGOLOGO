@@ -28,7 +28,12 @@ export class TableComponent implements OnInit {
   private _textoBusca: string = '';
   produtosFiltrados: Produto[] = [];
 
-  @Input() 
+  @Input() set produtos(value: Produto[]) {
+    this.listaProdutos = value;
+    this.filtrarProdutos();
+  }
+
+  @Input()
   set textoBusca(value: string) {
     this._textoBusca = value;
     this.filtrarProdutos();

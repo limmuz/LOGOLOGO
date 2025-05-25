@@ -139,18 +139,11 @@
       "senha": "1234"
     },
     {
-      "id": "d362",
-      "nome": "Tayna",
-      "sobrenome": "Araújo Bispo",
-      "email": "tayna.abispo@logologo.com",
-      "senha": "1234"
-    },
-    {
       "id": "5c85",
       "nome": "Vinícius",
       "sobrenome": "Avarelo",
-      "email": "viniciusavarelopacheco@gmail.com",
-      "senha": "12345678910"
+      "email": "vinicius.apacheco@logologo.com",
+      "senha": "1234"
     }
   ],
   "clients": [

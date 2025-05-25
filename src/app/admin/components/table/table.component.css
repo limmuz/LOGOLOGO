@@ -74,19 +74,17 @@ tbody tr th i:hover {
 }
 
 .msg-nenhum-produto {
-  text-align: center;      
-  vertical-align: middle;  
-  height: 50px;           
-  background-color: #ffe5e5;
+  text-align: center;
   color: #b30000;
-  font-weight: bold;
-  padding: 1rem 2rem;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
-  font-size: 1rem;
 
+  background-color: #ffe5e5;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 8px rgb(0, 0, 0);
 }
 
-
+.msg-nenhum-produto span {
+    font-weight: bold;
+}
 
 
 

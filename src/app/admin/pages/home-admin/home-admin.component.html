@@ -1,14 +1,8 @@
 <main class="home">
   <div class="header">
     <div class="input">
-      <input
-        type="text"
-        name="pesquisar"
-        id="pesquisar"
-        [(ngModel)]="textoBusca"
-        (input)="filtrarProdutos()"
-        placeholder="Digite o nome de um produto..."
-      />
+      <input type="text" name="pesquisar" id="pesquisar" [(ngModel)]="textoBusca" (input)="filtrarProdutos()"
+        placeholder="Digite o nome de um produto..." />
       <button class="bi bi-search" (click)="filtrarProdutos()"></button>
     </div>
 
@@ -42,34 +36,23 @@
     </div>
   </div>
 
-<app-table [textoBusca]="textoBusca"></app-table>
+  <app-table [produtos]="listaProdutos" [textoBusca]="textoBusca"></app-table>
 
 </main>
 
-<app-confirm-action
-  fundo="fundo-escuro"
-  [isOpen]="modalConfirmarCadastro"
-  (closed)="fecharModalConfirmarCadastro()"
-  title="Produto cadastrado"
->
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarCadastro" (closed)="fecharModalConfirmarCadastro()"
+  title="Produto cadastrado">
   <p>Produto cadastrado com sucesso!</p>
 
   <div class="espaco">
-    <app-button-action
-      cor="lilas"
-      (click)="fecharModalConfirmarCadastro(); fecharModalCadastrarProduto()"
-    >
+    <app-button-action cor="lilas" (click)="fecharModalConfirmarCadastro(); fecharModalCadastrarProduto()">
       Fechar
     </app-button-action>
   </div>
 </app-confirm-action>
 
-<app-confirm-action
-  fundo="fundo-escuro"
-  [isOpen]="modalErroCadastro"
-  (closed)="fecharModalErroCadastro()"
-  title="Erro ao Cadastrar"
->
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroCadastro" (closed)="fecharModalErroCadastro()"
+  title="Erro ao Cadastrar">
   <p>Preencha todos os campos antes de cadastrar o produto.</p>
 
   <div class="espaco">
@@ -79,18 +62,10 @@
   </div>
 </app-confirm-action>
 
-<app-info-product
-  fundo="fundo-escuro"
-  [isOpen]="modalCadastrarProduto"
-  (closed)="fecharModalCadastrarProduto()"
-  title="Cadastrar Produto"
-  [(valorInputNome)]="produto.nome"
-  [(valorTextArea)]="produto.descricao"
-  [(quantidadeEstoque)]="produto.quantidade"
-  [(tamanhoProduto)]="produto.tamanho"
-  [(precoProduto)]="produto.preco"
-  [(valorInputImagem)]="produto.imagem"
->
+<app-info-product fundo="fundo-escuro" [isOpen]="modalCadastrarProduto" (closed)="fecharModalCadastrarProduto()"
+  title="Cadastrar Produto" [(valorInputNome)]="produto.nome" [(valorTextArea)]="produto.descricao"
+  [(quantidadeEstoque)]="produto.quantidade" [(tamanhoProduto)]="produto.tamanho" [(precoProduto)]="produto.preco"
+  [(valorInputImagem)]="produto.imagem">
   <div class="espaco">
     <app-button-action (click)="fecharModalCadastrarProduto()" cor="lilas">
       Fechar
