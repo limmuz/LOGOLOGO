@@ -144,6 +144,13 @@
       "sobrenome": "Avarelo",
       "email": "vinicius.apacheco@logologo.com",
       "senha": "1234"
+    },
+    {
+      "id": "9c90",
+      "nome": "Admin",
+      "sobrenome": "Root",
+      "email": "admin@logologo.com",
+      "senha": "1234"
     }
   ],
   "clients": [
@@ -151,12 +158,6 @@
       "id": "d362",
       "nome": "Tayna Araújo Bispo",
       "email": "tayna.abispo@gmail.com",
-      "senha": "1234"
-    },
-    {
-      "id": "7a67",
-      "nome": "Nicole",
-      "email": "nicolelins.04@gmail.com",
       "senha": "1234"
     }
   ]
