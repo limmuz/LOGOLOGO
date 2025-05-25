@@ -13,7 +13,7 @@ import { ProdutoService } from '../../../core/services/produto.service';
   templateUrl: './home-admin.component.html',
   styleUrl: './home-admin.component.css'
 })
-export class HomeAdminComponent implements OnInit {  // implementa OnInit
+export class HomeAdminComponent implements OnInit {
 
   @Input() nome: string = ""
   @Input() email: string = ""
@@ -81,8 +81,8 @@ export class HomeAdminComponent implements OnInit {  // implementa OnInit
 
   fecharModalConfirmarCadastro() {
     this.modalConfirmarCadastro = false;
-    this.carregarProdutos();            // atualiza a tabela
-    this.fecharModalCadastrarProduto(); // fecha o modal de cadastro
+    this.carregarProdutos();         
+    this.fecharModalCadastrarProduto();
   }
 
   abrirModalErroCadastro() {

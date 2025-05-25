@@ -22,19 +22,21 @@
             <h2>Usuários</h2>
 
             <div class="controller">
-                <button (click)="abrirModalCadastrarUsuarioAberto()">
+                <button (click)="abrirModalCadastrarUsuario()">
                     <i class="bi bi-plus-circle"></i>
                     Adicionar novo usuário
                 </button>
             </div>
         </div>
 
-        <app-table-users></app-table-users>
+        <app-table-users [listaAdmins]="listaAdmins"></app-table-users>
     </main>
 
 </app-admin-layout>
 
-<app-info-users fundo="fundo-escuro" titulo="Cadastrar Usuário" [isOpen]="modalCadastrarUsuarioAberto" (closed)="fecharModalCadastrarUsuario()" [(valorInputNome)]="admin.nome" [(valorInputSobrenome)]="admin.sobrenome" [(valorInputEmail)]="admin.email" [(valorInputSenha)]="admin.senha">
+<app-info-users fundo="fundo-escuro" titulo="Cadastrar Usuário" [isOpen]="modalCadastrarUsuarioAberto" (closed)="fecharModalCadastrarUsuario()" 
+    [(valorInputNome)]="admin.nome" [(valorInputSobrenome)]="admin.sobrenome" 
+    [(valorInputEmail)]="admin.email" [(valorInputSenha)]="admin.senha">
     <div class="espaco">
         <app-button-action (click)="fecharModalCadastrarUsuario()" cor="lilas">
             Fechar
@@ -47,8 +49,8 @@
 </app-info-users>
 
 <app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarCadastroUsuarioAberto" (closed)="fecharModalConfirmarCadastroUsuario()"
-    title="Produto cadastrado">
-    <p>Produto cadastrado com sucesso!</p>
+    title="Usuário cadastrado">
+    <p>Usuário <span>{{ admin.nome + " " + admin.sobrenome }}</span> cadastrado com sucesso!</p>
 
     <div class="espaco">
         <app-button-action cor="lilas" (click)="fecharModalConfirmarCadastroUsuario(); fecharModalCadastrarUsuario()">
@@ -56,8 +58,6 @@
         </app-button-action>
     </div>
 </app-confirm-action>
-
-<!-- integrar modal de erro posteriormente -->
 
 <app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroUsuarioAberto"
     (closed)="fecharModalErroUsuario()" title="Erro ao alterar">

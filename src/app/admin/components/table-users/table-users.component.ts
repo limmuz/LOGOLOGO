@@ -1,90 +1,90 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { ConfirmActionComponent } from "../modals/confirm-action/confirm-action.component";
-import { ButtonActionComponent } from "../button-action/button-action.component";
-import { InfoUsersComponent } from "../modals/info-users/info-users.component";
-import { AdminService } from '../../../core/services/admin.service';
-import { admin } from '../../../core/types/admin.types';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { ConfirmActionComponent } from "../modals/confirm-action/confirm-action.component"
+import { InfoUsersComponent } from "../modals/info-users/info-users.component"
+import { ButtonActionComponent } from "../button-action/button-action.component"
+import { Admin } from '../../../core/types/admin.types'
+import { AdminService } from '../../../core/services/admin.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-table-users',
-  imports: [ButtonActionComponent, InfoUsersComponent, ConfirmActionComponent],
+  imports: [ConfirmActionComponent, InfoUsersComponent, ButtonActionComponent],
   templateUrl: './table-users.component.html',
-  styleUrl: './table-users.component.css'
+  styleUrl: './table-users.component.css',
+  standalone: true,
 })
-
-
 export class TableUsersComponent implements OnInit {
 
-  @Input() listagemAdmin: admin[] = [];
+  @Input() listaAdmins: Admin[] = []; 
 
-  adminSelecionado: admin = {
+  adminSelecionado: Admin = {
     nome: '',
     sobrenome: '',
     email: '',
     senha: ''
-  };
+  }
 
-  modalAterarUsuarioAberto = false
-  modalConfirmarAlteracaoUsuarioAberto = false
-  modalInformacoesUsuarioAberto = false
-  modalExclusaoUsuarioAberto = false
-  modalErroUsuarioAberto = false
+  constructor(private service: AdminService, private router: Router) { }
 
-  
-  listarAdmins: admin[] = [];
-  constructor(private service: AdminService) { }
   ngOnInit(): void {
-    this.service.listar().subscribe((admin) => {
-      this.listarAdmins = admin;
+    this.service.listar().subscribe((admins) => {
+      this.listaAdmins = admins;
     });
   }
+  
+  modalExclusaoAberto = false
+  modalInformacoesAberto = false
+  modalAlterarUsuarioAberto = false
+  modalConfirmarAlteracaoAberto = false
+  modalErroAlteracao = false
 
-  abrirModalAterarUsuarioAberto(admin:admin) {
-    this.adminSelecionado = {...admin}
-    this.modalAterarUsuarioAberto = true
-  }
-
-  fecharModalAterarUsuario() {
-    this.modalAterarUsuarioAberto = false
-  }
-
-  abrirModalConfirmarAlteracaoUsuarioAberto() {
-    this.modalConfirmarAlteracaoUsuarioAberto = true
-  }
-
-  fecharModalConfirmarAlteracaoUsuario() {
-    this.modalConfirmarAlteracaoUsuarioAberto = false
-  }
-
-  abrirModalInformacoesUsuarioAberto(admin:admin) {
+  abrirModalExclusao(admin: Admin) {
     this.adminSelecionado = admin
-    this.modalInformacoesUsuarioAberto = true
+    this.modalExclusaoAberto = true
   }
 
-  fecharModalInformacoesUsuario() {
-    this.modalInformacoesUsuarioAberto = false
+  fecharModalExclusao() {
+    this.modalExclusaoAberto = false
   }
 
-  abrirModalExclusaoUsuarioAberto() {
-    this.modalExclusaoUsuarioAberto = true
+  abrirModalInformacoes(admin: Admin) {
+    this.adminSelecionado = admin
+    this.modalInformacoesAberto = true
   }
 
-  fecharModalExclusaoUsuario() {
-    this.modalExclusaoUsuarioAberto = false
+  fecharModalInformacoes() {
+    this.modalInformacoesAberto = false
   }
 
-  abrirModalErroUsuarioAberto() {
-    this.modalErroUsuarioAberto = true
+  abrirAlterarUsuario(admin: Admin) {
+    this.adminSelecionado = { ...admin }
+    this.modalAlterarUsuarioAberto = true
   }
 
-  fecharModalErroUsuario() {
-    this.modalErroUsuarioAberto = false
+  fecharAlterarUsuario() {
+    this.modalAlterarUsuarioAberto = false
+  }
+
+  abrirConfirmarAlteracaoUsuario() {
+    this.modalConfirmarAlteracaoAberto = true
+  }
+
+  fecharConfirmarAlteracaoUsuario() {
+    this.modalConfirmarAlteracaoAberto = false
+  }
+
+  abrirModalErroAlteracao() {
+    this.modalErroAlteracao = true
+  }
+
+  fecharModalErroAlteracao() {
+    this.modalErroAlteracao = false
   }
 
   excluir(id: number) {
     if (id) {
       this.service.excluir(id).subscribe(() => {
-        this.listagemAdmin = this.listagemAdmin.filter(p => p.id !== id);
+        this.listaAdmins = this.listaAdmins.filter(a => a.id !== id);
       });
     }
   }
@@ -93,22 +93,21 @@ export class TableUsersComponent implements OnInit {
     if (
       !this.adminSelecionado.nome?.trim() ||
       !this.adminSelecionado.sobrenome?.trim() ||
-      !this.adminSelecionado.email?.toString().trim() ||
-      !this.adminSelecionado.senha?.trim() 
+      !this.adminSelecionado.email?.trim() ||
+      !this.adminSelecionado.senha?.trim()
     ) {
-      this.modalErroUsuarioAberto = true;
+      this.modalErroAlteracao = true
       return;
     }
 
     if (this.adminSelecionado && this.adminSelecionado.id) {
       this.service.editar(this.adminSelecionado).subscribe(() => {
-        this.fecharModalAterarUsuario();
+        this.abrirConfirmarAlteracaoUsuario();
 
-        this.service.listar().subscribe(admin => {
-          this.listagemAdmin = admin;
+        this.service.listar().subscribe(admins => {
+          this.listaAdmins = admins;
         });
       });
     }
   }
 }
-
