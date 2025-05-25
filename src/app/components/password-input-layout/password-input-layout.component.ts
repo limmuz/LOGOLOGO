@@ -15,6 +15,7 @@ export class PasswordInputLayoutComponent implements ControlValueAccessor {
   @Input() tema: string = "";
   @Input() label: string = "";
   @Input() placeholder: string = "";
+   @Input() password: string = ""; 
   
   value: string = "";
   onChange: any = () => {};

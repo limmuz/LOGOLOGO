@@ -1,5 +1,5 @@
 import { Component, Input, forwardRef } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-register-input-layout',
@@ -13,15 +13,15 @@ import { NG_VALUE_ACCESSOR } from '@angular/forms';
     }
   ]
 })
-export class RegisterInputLayoutComponent {
+export class RegisterInputLayoutComponent implements ControlValueAccessor {
   @Input() tema: string = "";
   @Input() label: string = "";
   @Input() email: string = "";
   @Input() placeholder: string = "";
+  @Input() value: string = ""
 
-value: string = "";
-  onChange: any = () => {};
-  onTouched: any = () => {};
+  onChange: any = () => { };
+  onTouched: any = () => { };
 
   writeValue(value: string): void {
     this.value = value;
@@ -39,7 +39,7 @@ value: string = "";
   updateValue(event: Event): void {
     const value = (event.target as HTMLInputElement).value;
     this.value = value;
-    this.onChange(value); 
-    this.onTouched(); 
+    this.onChange(value);
+    this.onTouched();
   }
 }
