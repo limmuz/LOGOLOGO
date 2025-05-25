@@ -1,20 +1,41 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 import { ConfirmActionComponent } from "../modals/confirm-action/confirm-action.component";
 import { InfoProductComponent } from "../modals/info-product/info-product.component";
 import { ButtonActionComponent } from "../button-action/button-action.component";
-import { Produto } from '../../../core/types/types';
+
+import { Produto } from '../../../core/types/produto.types';
 import { ProdutoService } from '../../../core/services/produto.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-table',
-  imports: [ConfirmActionComponent, InfoProductComponent, ButtonActionComponent],
+  standalone: true,
+  imports: [
+    ConfirmActionComponent,
+    InfoProductComponent,
+    ButtonActionComponent,
+    CommonModule
+  ],
   templateUrl: './table.component.html',
-  styleUrl: './table.component.css'
+  styleUrl: './table.component.css',
 })
 export class TableComponent implements OnInit {
 
-  @Input() listaProdutos: Produto[] = [];
+  listaProdutos: Produto[] = [];
+
+  private _textoBusca: string = '';
+  produtosFiltrados: Produto[] = [];
+
+  @Input() 
+  set textoBusca(value: string) {
+    this._textoBusca = value;
+    this.filtrarProdutos();
+  }
+  get textoBusca(): string {
+    return this._textoBusca;
+  }
 
   produtoSelecionado: Produto = {
     nome: '',
@@ -25,67 +46,80 @@ export class TableComponent implements OnInit {
     preco: ''
   };
 
+  modalExclusaoAberto = false;
+  modalInformacoesAberto = false;
+  modalAlterarProdutoAberto = false;
+  modalConfirmarAlteracaoAberto = false;
+  modalErroAlteracao = false;
+
   constructor(private service: ProdutoService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.listar().subscribe((produtos) => {
       this.listaProdutos = produtos;
-    })
+      this.filtrarProdutos();
+    });
   }
 
-  modalExclusaoAberto = false;
-  modalInformacoesAberto = false;
-  modalAlterarProdutoAberto = false
-  modalConfirmarAlteracaoAberto = false
-  modalErroAlteracao = false
+  filtrarProdutos() {
+    if (!this.textoBusca || this.textoBusca.trim() === '') {
+      this.produtosFiltrados = [...this.listaProdutos];
+    } else {
+      const busca = this.textoBusca.toLowerCase().trim();
+      this.produtosFiltrados = this.listaProdutos.filter(produto =>
+        produto.nome.toLowerCase().startsWith(busca)
+      );
+    }
+  }
 
   abrirModalExclusao(produto: Produto) {
     this.produtoSelecionado = produto;
-    this.modalExclusaoAberto = true
+    this.modalExclusaoAberto = true;
   }
 
   fecharModalExclusao() {
-    this.modalExclusaoAberto = false
+    this.modalExclusaoAberto = false;
   }
 
   abrirModalInformacoes(produto: Produto) {
     this.produtoSelecionado = produto;
-    this.modalInformacoesAberto = true
+    this.modalInformacoesAberto = true;
   }
 
   fecharModalInformacoes() {
-    this.modalInformacoesAberto = false
+    this.modalInformacoesAberto = false;
   }
 
   abrirAlterarProduto(produto: Produto) {
-    this.produtoSelecionado = { ...produto }
-    this.modalAlterarProdutoAberto = true
+    this.produtoSelecionado = { ...produto };
+    this.modalAlterarProdutoAberto = true;
   }
 
   fecharAlterarProduto() {
-    this.modalAlterarProdutoAberto = false
+    this.modalAlterarProdutoAberto = false;
   }
 
   abrirConfirmarAlteracaoProduto() {
-    this.modalConfirmarAlteracaoAberto = true
+    this.modalConfirmarAlteracaoAberto = true;
   }
 
   fecharConfirmarAlteracaoProduto() {
-    this.modalConfirmarAlteracaoAberto = false
+    this.modalConfirmarAlteracaoAberto = false;
   }
 
   abrirModalErroAlteracao() {
-    this.modalErroAlteracao = true
+    this.modalErroAlteracao = true;
   }
 
   fecharModalErroAlteracao() {
-    this.modalErroAlteracao = false
+    this.modalErroAlteracao = false;
   }
 
   excluir(id: number) {
     if (id) {
       this.service.excluir(id).subscribe(() => {
         this.listaProdutos = this.listaProdutos.filter(p => p.id !== id);
+        this.filtrarProdutos();
       });
     }
   }
@@ -109,8 +143,13 @@ export class TableComponent implements OnInit {
 
         this.service.listar().subscribe(produtos => {
           this.listaProdutos = produtos;
+          this.filtrarProdutos();
         });
       });
     }
+  }
+
+  trackByProduto(index: number, produto: Produto): number | string {
+    return produto.id ?? index;
   }
 }

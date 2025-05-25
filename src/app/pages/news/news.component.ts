@@ -4,7 +4,7 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { FooterComponent } from "../../components/footer/footer.component";
 import { ProductBoxComponent } from "../../components/product-box/product-box.component";
 import { ProdutoService } from '../../core/services/produto.service';
-import { Produto } from '../../core/types/types';
+import { Produto } from '../../core/types/produto.types';
 
 @Component({
   selector: 'app-news',

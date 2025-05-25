@@ -7,7 +7,7 @@ import { ProductBoxComponent } from "../../components/product-box/product-box.co
 import { WhiteRoundButtonComponent } from "../../components/buttons/white-round-button/white-round-button.component";
 import { BlackSquareButtonComponent } from "../../components/buttons/black-square-button/black-square-button.component";
 import { CaroselComponent } from "../../components/carrosel/carosel.component";
-import { Produto } from '../../core/types/types';
+import { Produto } from '../../core/types/produto.types';
 import { ProdutoService } from '../../core/services/produto.service';
 
 @Component({

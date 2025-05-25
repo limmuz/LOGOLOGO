@@ -14,13 +14,13 @@
         </thead>
 
     <tbody>
-  <tr *ngIf="listaProdutos.length === 0">
+  <tr *ngIf="produtosFiltrados.length === 0">
     <td colspan="10" class="msg-nenhum-produto">
       Nenhum produto encontrado para "{{ textoBusca }}"
     </td>
   </tr>
 
-  <tr *ngFor="let produto of listaProdutos; trackBy: trackByProduto">
+  <tr *ngFor="let produto of produtosFiltrados; trackBy: trackByProduto">
     <th> {{produto.id}} </th>
     <th><img class="table-image" [src]="produto.imagem" [title]="'Imagem do produto ' + produto.nome" [alt]="'Imagem do produto ' + produto.nome"></th>
     <th class="nome"> {{ produto.nome }} </th>
@@ -34,8 +34,6 @@
   </tr>
 </tbody>
 
-
-<!-- Mantenha o modal fora do tbody e do loop -->
 <app-confirm-action [isOpen]="modalExclusaoAberto" (closed)="fecharModalExclusao()" fundo="fundo-claro"
     title="Excluir produto">
     <p>Tem certeza que deseja excluir este produto?</p>

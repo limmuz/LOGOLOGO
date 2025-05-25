@@ -4,7 +4,7 @@ import { TableComponent } from "../../components/table/table.component";
 import { InfoProductComponent } from "../../components/modals/info-product/info-product.component";
 import { ButtonActionComponent } from "../../components/button-action/button-action.component";
 import { ConfirmActionComponent } from "../../components/modals/confirm-action/confirm-action.component";
-import { Produto } from '../../../core/types/types';
+import { Produto } from '../../../core/types/produto.types';
 import { ProdutoService } from '../../../core/services/produto.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

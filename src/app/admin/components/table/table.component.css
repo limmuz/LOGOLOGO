@@ -12,6 +12,7 @@
 table {
     border-collapse: collapse;
     width: 100%;
+
 }
 
 thead {
@@ -27,6 +28,7 @@ thead th {
     border-bottom: 1px solid var(--cinza);
     padding: 1rem 0;
     text-align: center;
+    
 }
 
 tbody th {
@@ -34,6 +36,7 @@ tbody th {
     padding: 8px;
     text-align: center;
     font-weight: normal;
+    
 }
 
 .table-image {
@@ -67,4 +70,23 @@ tbody tr th i:hover {
 .espaco {
     display: flex;
     gap: 1rem;
+    
 }
+
+.msg-nenhum-produto {
+  text-align: center;      
+  vertical-align: middle;  
+  height: 50px;           
+  background-color: #ffe5e5;
+  color: #b30000;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+
+}
+
+
+
+
+
