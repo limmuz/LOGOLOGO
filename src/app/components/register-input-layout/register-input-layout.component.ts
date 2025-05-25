@@ -10,5 +10,6 @@ export class RegisterInputLayoutComponent {
   @Input() tema: string = ""
   @Input() label: string = ""
   @Input() email: string = ""
+  @Input() type: string = ""
 }
 

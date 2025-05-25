@@ -12,12 +12,12 @@ import { CalcadosComponent } from './pages/calcados/calcados.component';
 import { AcessoriosComponent } from './pages/acessorios/acessorios.component';
 import { UnderConstructionsComponent } from './components/under-constructions/under-constructions.component';
 
-import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.component';
 import { NotificationAdminComponent } from './admin/pages/notification-admin/notification-admin.component';
 import { LogOutAdminComponent } from './admin/pages/log-out-admin/log-out-admin.component';
 import { AdminComponent } from './admin/admin.component';
-import { InfoProductComponent } from './admin/components/modals/info-product/info-product.component';
 import { UsersAdminComponent } from './admin/pages/users-admin/users-admin.component';
+import { AdminGuard } from './guards/admin.guard';
+import { HomeAdminComponent } from './admin/pages/home-admin/home-admin.component';
 
 export const routes: Routes = [
     {
@@ -78,22 +78,30 @@ export const routes: Routes = [
     {
         path: "admin",
         component: AdminComponent,
-        title: "LOGOLOGO - Admin"
-    },
-    {
-        path: "notificacoes",
-        component: NotificationAdminComponent,
-        title: "LOGOLOGO - Notificações"
-    },
-    {
-        path: "logout",
-        component: LogOutAdminComponent,
-        title: "LOGOLOGO - Log Out"
-    },
-    {
-        path: "users",
-        component: UsersAdminComponent,
-        title: "LOGOLOGO - Usuários"
+        title: "LOGOLOGO - Admin",
+        canActivate: [AdminGuard],
+        children: [
+            {
+                path: "",
+                component: HomeAdminComponent,
+                title: "LOGOLOGO - Admin Home"
+            },
+            {
+                path: "notificacoes",
+                component: NotificationAdminComponent,
+                title: "LOGOLOGO - Notificações"
+            },
+            {
+                path: "logout",
+                component: LogOutAdminComponent,
+                title: "LOGOLOGO - Log Out"
+            },
+            {
+                path: "users",
+                component: UsersAdminComponent,
+                title: "LOGOLOGO - Usuários"
+            }
+        ]
     },
     {
         path: "404",

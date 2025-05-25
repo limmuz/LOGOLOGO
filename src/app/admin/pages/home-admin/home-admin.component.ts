@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { TableComponent } from "../../components/table/table.component";
 import { InfoProductComponent } from "../../components/modals/info-product/info-product.component";
 import { ButtonActionComponent } from "../../components/button-action/button-action.component";
@@ -50,8 +50,20 @@ export class HomeAdminComponent implements OnInit {
     }
   }
 
+  usuarioLogado: { nome: string; email: string } | null = null
+
   ngOnInit() {
     this.carregarProdutos();
+
+    const usuarioStr = localStorage.getItem("usuarioLogado")
+
+    if(usuarioStr) {
+      const usuario = JSON.parse(usuarioStr)
+      this.usuarioLogado = {
+        nome: usuario.nome || usuario.nomeCompleto || "Usuário",
+        email: usuario.email || 'email@exemplo.com'
+      }
+    }
   }
 
   carregarProdutos() {

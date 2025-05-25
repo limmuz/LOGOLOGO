@@ -1,6 +1,7 @@
 <div class="login-container">
     <div class="left">
         <div class="blur">
+            <app-logo routerLink="/" title="logologo"></app-logo>
         </div>
     </div>
 
@@ -10,9 +11,9 @@
             <p>Por favor, insira as informações abaixo</p>
 
             <div class="inputs">
-                <app-register-input-layout tema="tema-escuro" label="e-mail"
-                    email="Digite seu e-mail"></app-register-input-layout>
-                <app-register-input-layout tema="tema-escuro" label="confirmar e-mail"
+                <app-register-input-layout type="text" tema="tema-escuro" label="Nome completo"
+                    email="Digite seu Nome"></app-register-input-layout>
+                <app-register-input-layout type="email" tema="tema-escuro" label="e-mail"
                     email="Digite seu e-mail"></app-register-input-layout>
             </div>
 
@@ -22,8 +23,6 @@
                 <app-password-input-layout tema="tema-escuro" label="confirmar senha"
                     password="Digite sua senha"></app-password-input-layout>
             </div>
-
-
 
             <div class="btns">
                 <app-orange-square-button routerLink="/" tema="tema-escuro" orangeSquareButton="entrar"></app-orange-square-button>

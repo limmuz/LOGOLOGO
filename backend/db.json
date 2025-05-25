@@ -152,5 +152,13 @@
       "email": "viniciusavarelopacheco@gmail.com",
       "senha": "12345678910"
     }
+  ],
+  "clients": [
+    {
+      "id": "d362",
+      "nome": "Tayna Araújo Bispo",
+      "email": "tayna.abispo@gmail.com",
+      "senha": "1234"
+    }
   ]
 }

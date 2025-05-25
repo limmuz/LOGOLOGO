@@ -49,9 +49,20 @@ export class UsersAdminComponent implements OnInit {
       });
     }
   }
+  usuarioLogado: { nome: string; email: string } | null = null
 
   ngOnInit(): void {
-    this.carregarUsuarios();
+    this.carregarUsuarios()
+    
+    const usuarioStr = localStorage.getItem("usuarioLogado")
+
+    if(usuarioStr) {
+      const usuario = JSON.parse(usuarioStr)
+      this.usuarioLogado = {
+        nome: usuario.nome || usuario.nomeCompleto || "Usuário",
+        email: usuario.email || 'email@exemplo.com'
+      }
+    }
   }
 
   carregarUsuarios() {
