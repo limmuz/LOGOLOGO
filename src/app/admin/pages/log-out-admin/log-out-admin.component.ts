@@ -21,4 +21,7 @@ export class LogOutAdminComponent {
     localStorage.removeItem('userData');
     this.router.navigate(['/login']);
   }
+
 }
+
+

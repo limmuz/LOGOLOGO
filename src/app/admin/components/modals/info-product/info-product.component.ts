@@ -18,6 +18,13 @@ export class InfoProductComponent {
   @Input() isOpen = false;
   @Input() showFooter = true;
 
+  @Input() produtoImagem: string = "";
+  @Input() valorInputNome: string = "";
+  @Input() valorTextArea: string = "";
+  @Input() quantidadeEstoque: string = "";
+  @Input() tamanhoProduto: string = "";
+  @Input() precoProduto: string = "";
+
   @Output() closed = new EventEmitter<void>();
 
   close() {

@@ -1,4 +1,4 @@
-<div class="modal-overlay" *ngIf="isOpen" (click)="close()">
+<div class="modal-overlay" *ngIf="isOpen">
     <div class="modal-content">
         <div class="modal-header">
             <h2> {{ title }} </h2>
@@ -6,12 +6,6 @@
 
         <div class="modal-body">
             <ng-content></ng-content>
-        </div>
-
-        <div class="modal-footer">
-            <app-button-action (click)="close()" cor="laranja">
-                Excluir
-            </app-button-action>
         </div>
     </div>
 </div>

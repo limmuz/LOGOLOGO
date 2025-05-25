@@ -26,6 +26,7 @@
     border-radius: 1rem;
 
     max-width: 15vw;
+    min-height: 15vh;
 
     width: 100%;
     height: auto;
