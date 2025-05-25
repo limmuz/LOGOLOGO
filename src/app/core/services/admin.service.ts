@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { admin } from '../types/admin.types';
+import { Admin } from '../types/admin.types';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root'
@@ -12,28 +11,26 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<admin[]> {
-    return this.http.get<admin[]>(this.API)
+  listar(): Observable<Admin[]> {
+    return this.http.get<Admin[]>(this.API)
 
   }
 
-  incluir(admin: admin): Observable<admin> {
-    return this.http.post<admin>(this.API, admin)
+  incluir(admin: Admin): Observable<Admin> {
+    return this.http.post<Admin>(this.API, admin)
   }
 
-  editar(admin: admin): Observable<admin> {
+  editar(admin: Admin): Observable<Admin> {
     const url = `${this.API}/${admin.id}`
-    return this.http.put<admin>(url, admin)
+    return this.http.put<Admin>(url, admin)
   }
 
-  buscarPorId(id: number): Observable<admin | undefined> {
-    return this.http.get<admin>(this.API + `/${id}`);
+  buscarPorId(id: number): Observable<Admin | undefined> {
+    return this.http.get<Admin>(this.API + `/${id}`);
   }
 
-  excluir(id: number): Observable<admin> {
-    return this.http.delete<admin>(this.API + `/${id}`);
+  excluir(id: number): Observable<Admin> {
+    return this.http.delete<Admin>(this.API + `/${id}`);
   }
-
-
 }
 

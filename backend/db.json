@@ -111,25 +111,39 @@
   ],
   "admin": [
     {
-      "id": "1",
-      "nome": "Melvo",
-      "sobrenome": "Silva",
-      "email": "melvino@gmail.com",
-      "senha": "melovo123"
+      "id": "bbe1",
+      "nome": "Ana",
+      "sobrenome": "Paula Pereira Viana",
+      "email": "ana.ppviana@logologo.com",
+      "senha": "1234"
     },
     {
-      "id": "2",
-      "nome": "Nicolete",
-      "sobrenome": "Guimaraes",
-      "email": "elincinha@gmail.com",
-      "senha": "elociny123"
+      "id": "a6e7",
+      "nome": "Melvin",
+      "sobrenome": "Expedito Gomes Felix",
+      "email": "melvin.egfelix@logologo.com",
+      "senha": "1234"
     },
     {
-      "id": "6ad9",
-      "nome": "Vinícius",
-      "sobrenome": "Avarelo",
-      "email": "avarelovinicius@gmail.com",
-      "senha": "123456789"
+      "id": "a2cd",
+      "nome": "Miguel",
+      "sobrenome": "Luiz Lima Nascimento",
+      "email": "miguel.llnascimento@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "2f61",
+      "nome": "Nicole",
+      "sobrenome": "Lins Coelho",
+      "email": "nicole.lcoelho@logologo.com",
+      "senha": "1234"
+    },
+    {
+      "id": "d362",
+      "nome": "Tayna",
+      "sobrenome": "Araújo Bispo",
+      "email": "tayna.abispo@logologo.com",
+      "senha": "1234"
     },
     {
       "id": "5c85",

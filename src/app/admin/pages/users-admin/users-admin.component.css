@@ -100,3 +100,7 @@ i {
     display: flex;
     gap: 1rem;
 }
+
+app-confirm-action p span {
+    font-weight: bolder;
+}

@@ -12,27 +12,27 @@
         </thead>
 
         <tbody>
-            @for (admin of listarAdmins; track admin){
+            @for (admin of listaAdmins; track admin) {
             <tr>
-                <th class="id">{{admin.id}}</th>
-                <th class="nome">{{admin.nome}}</th>
-                <th class="nome">{{admin.sobrenome}}</th>
-                <th class="email">{{admin.email}}</th>
-                <th class="senha">{{admin.senha}}</th>
-                <th><i class="bi bi-info-circle" (click)="abrirModalInformacoesUsuarioAberto(admin)"></i></th>
-                <th><i class="bi bi-pencil-square" (click)="abrirModalAterarUsuarioAberto(admin)"></i></th>
-                <th><i class="bi bi-trash3" (click)="abrirModalExclusaoUsuarioAberto()"></i></th>
+                <th>{{ admin.id }}</th>
+                <th>{{ admin.nome }}</th>
+                <th>{{ admin.sobrenome }}</th>
+                <th>{{ admin.email }}</th>
+                <th>{{ admin.senha }}</th>
+                <th><i class="bi bi-info-circle" (click)="abrirModalInformacoes(admin)"></i></th>
+                <th><i class="bi bi-pencil-square" (click)="abrirAlterarUsuario(admin)"></i></th>
+                <th><i class="bi bi-trash3" (click)="abrirModalExclusao(admin)"></i></th>
             </tr>
 
-            <app-confirm-action [isOpen]="modalExclusaoUsuarioAberto" (closed)="fecharModalExclusaoUsuario()"
-                fundo="fundo-claro" title="Excluir Usuário">
-                <p>Tem certeza que deseja excluir este usuário?</p>
+            <app-confirm-action [isOpen]="modalExclusaoAberto" (closed)="fecharModalExclusao()" fundo="fundo-claro"
+                title="Excluir Usuário">
+                <p>Tem certeza que deseja excluir o usuário <span>{{ adminSelecionado.nome + " " + adminSelecionado.sobrenome }}</span>?</p>
 
                 <div class="espaco">
-                    <app-button-action cor="lilas" (click)="fecharModalExclusaoUsuario()">
+                    <app-button-action cor="lilas" (click)="fecharModalExclusao()">
                         Cancelar
                     </app-button-action>
-                    <app-button-action cor="laranja" (click)="fecharModalExclusaoUsuario(); excluir(adminSelecionado.id!)">
+                    <app-button-action cor="laranja" (click)="fecharModalExclusao(); excluir(adminSelecionado.id!)">
                         Excluir
                     </app-button-action>
                 </div>
@@ -42,50 +42,50 @@
     </table>
 </div>
 
-<app-info-users fundo="fundo-escuro" [somenteLeitura]="true" [isOpen]="modalInformacoesUsuarioAberto"
-    (closed)="fecharModalInformacoesUsuario()" titulo="Informações do Usuário" [(valorInputNome)]="adminSelecionado.nome" [(valorInputSobrenome)]="adminSelecionado.sobrenome" [(valorInputEmail)]="adminSelecionado.email" [(valorInputSenha)]="adminSelecionado.senha">
+<app-info-users fundo="fundo-escuro" [isOpen]="modalInformacoesAberto" [somenteLeitura]="true"
+    (closed)="fecharModalInformacoes()" titulo="Informações do Usuário" [valorInputNome]="adminSelecionado.nome"
+    [valorInputSobrenome]="adminSelecionado.sobrenome" [valorInputEmail]="adminSelecionado.email"
+    [valorInputSenha]="adminSelecionado.senha">
+
     <div class="espaco">
-        <app-button-action (click)="fecharModalInformacoesUsuario()" cor="lilas">
+        <app-button-action (click)="fecharModalInformacoes()" cor="lilas">
             Fechar
         </app-button-action>
     </div>
 </app-info-users>
 
-<app-info-users fundo="fundo-escuro" [isOpen]="modalAterarUsuarioAberto" (closed)="fecharModalAterarUsuario()"
-    titulo="Alterar usuário" [(valorInputNome)]="adminSelecionado.nome" [(valorInputSobrenome)]="adminSelecionado.sobrenome" [(valorInputEmail)]="adminSelecionado.email" [(valorInputSenha)]="adminSelecionado.senha">
+<app-info-users fundo="fundo-escuro" [isOpen]="modalAlterarUsuarioAberto" (closed)="fecharAlterarUsuario()"
+    titulo="Alterar Usuário" [(valorInputNome)]="adminSelecionado.nome"
+    [(valorInputSobrenome)]="adminSelecionado.sobrenome" [(valorInputEmail)]="adminSelecionado.email"
+    [(valorInputSenha)]="adminSelecionado.senha">
+
     <div class="espaco">
-        <app-button-action (click)="fecharModalAterarUsuario()" cor="lilas">
+        <app-button-action (click)="fecharAlterarUsuario()" cor="lilas">
             Fechar
         </app-button-action>
-        <app-button-action (click)="abrirModalConfirmarAlteracaoUsuarioAberto()" cor="laranja">
+        <app-button-action (click)="confirmarAlteracaoAdmin()" cor="laranja">
             Alterar
         </app-button-action>
     </div>
 </app-info-users>
 
-<app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarAlteracaoUsuarioAberto"
-    (closed)="fecharModalConfirmarAlteracaoUsuario()" title="Usuário alterado">
-    <p>Usuário alterado com sucesso!</p>
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalConfirmarAlteracaoAberto"
+    (closed)="fecharConfirmarAlteracaoUsuario()" title="Usuário alterado">
+    <p>Usuário <span>{{ adminSelecionado.nome + " " + adminSelecionado.sobrenome }}</span> alterado com sucesso!</p>
 
     <div class="espaco">
-        <app-button-action cor="lilas" (click)="fecharModalConfirmarAlteracaoUsuario(); fecharModalAterarUsuario()">
+        <app-button-action cor="lilas" (click)="fecharConfirmarAlteracaoUsuario(); fecharAlterarUsuario()">
             fechar
         </app-button-action>
     </div>
 </app-confirm-action>
 
-<!-- tem que estar dentro do @for posteriormente -->
-
-
-
-<!-- integrar modal de erro posteriormente -->
-
-<app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroUsuarioAberto" (closed)="fecharModalErroUsuario()"
+<app-confirm-action fundo="fundo-escuro" [isOpen]="modalErroAlteracao" (closed)="fecharModalErroAlteracao()"
     title="Erro ao alterar">
     <p>Preencha todos os campos antes de alterar o usuário.</p>
 
     <div class="espaco">
-        <app-button-action cor="vermelho" (click)="fecharModalErroUsuario()">
+        <app-button-action cor="vermelho" (click)="fecharModalErroAlteracao()">
             fechar
         </app-button-action>
     </div>
